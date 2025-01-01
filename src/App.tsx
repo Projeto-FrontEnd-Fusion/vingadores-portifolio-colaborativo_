@@ -1,11 +1,14 @@
 import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
 
 function App() {
   return (
-    <>
-      <h1 className="text-2xl font-semibold">Welcome avangers</h1> <br /> 🦾⚙️
-      ⚡🔨 💪💚 🐜🧪 🐝✨ 🛡️🇺🇸 🎯🏹 🕷️🖤 🔮❤️ 🤖💎 🐾🖤 🕸️🕷️ 🌀🧙‍♂️ 🌟🚀
-    </>
+    <div className="min-h-screen bg-[#0a0920]">
+      <header className="flex h-14 p-10">
+        <Navbar />
+      </header>
+    </div>
+
   );
 }
 
