@@ -1,4 +1,4 @@
-import React from 'react';
+import { Button } from '../Button/Button';
 
 function Navbar(): JSX.Element {
   return (
@@ -46,6 +46,9 @@ function Navbar(): JSX.Element {
           >
             tecnologias
           </a>
+        </li>
+        <li>
+          <Button isNavbar={true}/>
         </li>
       </ul>
     </nav>
