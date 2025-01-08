@@ -3,19 +3,12 @@ import { z } from "zod";
 export const validVacancy = [
   "Desenvolvedor Frontend",
   "Desenvolvedor Backend",
-  "Desenvolvedor Full Stack",
-  "Desenvolvedor Mobile",
-  "Desenvolvedor de Software",
-  "Engenheiro de Software",
-  "Arquiteto de Software",
-  "UI/UX Designer",
-  "Analista de Sistemas",
-  "Analista Programador",
-  "DevOps Engineer",
-  "Engenheiro de Dados",
-  "QA Engineer",
+  "Desenvolvedor FullStack",
+  "Designer UI/UX",
   "Scrum Master",
+  "Product Manager",
   "Product Owner",
+  "Career Consultant",
 ] as const;
 
 export const formSchema = z.object({
