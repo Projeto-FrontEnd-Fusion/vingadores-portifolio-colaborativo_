@@ -1,18 +1,24 @@
-import { ComponentProps, forwardRef } from "react";
+import { ComponentProps } from "react";
+import { useFormContext } from "react-hook-form";
 
 interface InputProps extends ComponentProps<"input"> {
+  id: string;
+  placeholder: string;
   label: string;
   error?: string;
 };
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({ label, error, id, ...props }, ref) => {
+
+const Input = ({ id, placeholder, label, error, ...props }: InputProps) => {
+  const { register } = useFormContext()
+
   return (
     <div>
       <label htmlFor={id} >{label}</label>
-      <input {...props} id={id} ref={ref} />
+      <input className="text-black" id={id} placeholder={placeholder} {...register(id)} {...props} />
       {error && <p>{error}</p>}
     </div>
   )
-});
+};
 
 export default Input;
