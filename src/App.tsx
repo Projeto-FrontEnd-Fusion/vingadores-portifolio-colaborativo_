@@ -1,4 +1,5 @@
 import "./App.css";
+import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
@@ -7,6 +8,10 @@ function App() {
       <header className="flex h-14 p-10">
         <Navbar />
       </header>
+
+      <div className="px-8 py-3 bg-">
+        <FormDescription />
+      </div>
     </div>
 
   );
