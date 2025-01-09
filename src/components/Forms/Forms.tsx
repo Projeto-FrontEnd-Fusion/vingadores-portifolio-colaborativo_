@@ -17,6 +17,7 @@ const Forms = () => {
     <FormProvider {...methods}>
       <form
         className="w-full max-w-lg p-10 gap-3 flex flex-col bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl"
+        id="formulario"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="flex flex-wrap gap-6">
