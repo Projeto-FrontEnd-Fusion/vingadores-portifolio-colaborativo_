@@ -6,12 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        colorButton: '#26EEEF',
-        colorTextButton: '#1A1756',
-      }
+      fontFamily: {
+        'fusion': ['Helvetica', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [],
 }
-
