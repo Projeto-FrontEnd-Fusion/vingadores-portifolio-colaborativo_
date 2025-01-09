@@ -7,7 +7,6 @@ interface ButtonProps extends ComponentProps<"a"> {
 export const Button = ({ isNavbar, ...props } :  ButtonProps) => {
     return <a 
             {...props} 
-            className={`bg-colorButton text-colorTextButton font-normal text-center transition duration-300 ease-in-out
                     hover:bg-[#23CFCE] 
                     active:bg-[#1A9998] 
                     ${isNavbar 
@@ -18,4 +17,4 @@ export const Button = ({ isNavbar, ...props } :  ButtonProps) => {
             >
                 Inscreva-se aqui
             </a>;
-};
+};    className={`bg-[#26EEEF] text-[#1A1756] font-normal text-center transition duration-300 ease-in-out
