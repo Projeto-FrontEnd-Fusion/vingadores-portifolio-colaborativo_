@@ -16,16 +16,15 @@ const Forms = () => {
   return (
     <FormProvider {...methods}>
       <form
-        className="w-full max-w-lg py-5 px-5 flex flex-col gap-6 text-white bg-gradient-to-r from-[#FCFCFD54] to-[#646DF036] rounded-md"
+        className="w-full max-w-lg p-10 gap-3 flex flex-col bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-wrap gap-6">
           <Input
             label="Nome"
             type="text"
             id="name"
             placeholder="Nome"
-            className="bg-white text-white border-[rgba(252,252,253,0.33)] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             error={errors.name?.message}
           />
 
@@ -34,65 +33,60 @@ const Forms = () => {
             type="text"
             id="lastName"
             placeholder="Sobrenome"
-            className="bg-transparent text-white border-[rgba(252,252,253,0.33)] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             error={errors.lastName?.message}
           />
-          
-          <div className="col-span-2">
-            <Input
-              label="E-mail"
-              type="email"
-              id="email"
-              placeholder="E-mail"
-              className="bg-transparent text-white border border-[rgba(252,252,253,0.33)] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              error={errors.email?.message}
-            />
-          </div>
         </div>
 
+        <Input
+          label="E-mail"
+          type="email"
+          id="email"
+          placeholder="E-mail"
+          error={errors.email?.message}
+        />
+
         <div>
-          <label htmlFor="position" className="block text-sm font-medium py-2" style={{ color: '#FCFCFD' }}>
+          <label htmlFor="position" className="text-white block text-sm font-medium py-2">
             Vaga desejada
           </label>
           <select
             id="position"
             defaultValue=""
-            className="w-full px-4 py-2 text-black bg-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 text-white bg-transparent border-solid border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             {...register("position")}
           >
-            <option value="" disabled className="text-gray-50">
+            <option value="" disabled>
               Selecione a vaga desejada...
             </option>
             {validVacancy.map((vacancy, index) => (
-              <option value={vacancy} key={index}>
+              <option className="text-black" value={vacancy} key={index}>
                 {vacancy}
               </option>
             ))}
           </select>
           {errors.position && (
-            <p style={{ color: 'white '}} className="text-white text-xs mt-1">{errors.position.message}</p>
+            <p className="text-white text-xs mt-1">{errors.position.message}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor="description" className="block text-sm font-medium py-2" style={{ color: '#FCFCFD' }}>
+          <label htmlFor="description" className="block text-white text-sm font-medium py-2">
             Conte-nos sobre você
           </label>
           <textarea
             id="description"
             placeholder="Escreva um pouco sobre você!"
-            className="w-full h-40 px-4 py-2 text-black border border-[rgba(252,252,253,0.33)] rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full h-20 px-4 py-2 bg-transparent text-white border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             {...register("description")}
           />
           {errors.description && (
-            <p style={{ color: 'white '}} className="text-white text-xs mt-1">{errors.description.message}</p>
+            <p className="text-white text-xs mt-1">{errors.description.message}</p>
           )}
         </div>
 
         <button
           type="submit"
-          style={{ color: 'white '}}
-          className="bg-button text-white w-full py-2 mt-4 text-center text-white rounded-md focus:ring-2"
+          className="bg-[#585FC5] w-full p-3 mt-4 text-center text-white font-bold rounded-lg focus:ring-2 hover:bg-[#3E4A9A] active:bg-[#2E3A7A] transition ease-in-out "
         >
           Enviar formulário
         </button>
