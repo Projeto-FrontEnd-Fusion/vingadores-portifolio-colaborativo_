@@ -1,6 +1,7 @@
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
+import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <header className="flex h-14 p-10">
         <Navbar />
       </header>
+
+      <SectionPresentation />
 
       <div className="px-8 py-3 bg-">
         <FormDescription />

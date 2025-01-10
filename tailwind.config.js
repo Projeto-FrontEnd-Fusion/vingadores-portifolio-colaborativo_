@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'fusion': ['Helvetica', 'Arial', 'sans-serif'],
+        'presentation': ['Zen Dots', 'sans-serif']
       },
     },
   },
