@@ -5,17 +5,25 @@ import Forms from "./components/Forms/Forms";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0a0920]">
-      <header className="flex h-14 p-10">
+    <div className="flex flex-col min-h-screen bg-[#0a0920]">
+      {/* Navbar */}
+      <header className="h-14 p-4">
         <Navbar />
       </header>
-      <div className="px-8 py-3 bg-">
-        <FormDescription />
+
+      {/* Main Content */}
+      <div className="flex flex-col md:flex-row flex-1 px-8 py-6 gap-8">
+        {/* Left Section: Form Description */}
+        <div className="flex-1">
+          <FormDescription />
+        </div>
+
+        {/* Right Section: Forms */}
+        <div className="flex-1">
+          <Forms />
+        </div>
       </div>
-
-      <Forms />
     </div>
-
   );
 }
 
