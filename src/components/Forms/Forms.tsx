@@ -15,13 +15,13 @@ const Forms = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="flex justify-end items-start h-screen">
-      <form
-        className="w-full max-w-xs sm:max-w-md md:max-w-lg p-4 md:p-10 gap-3 flex flex-col bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4 mx-auto"
-        id="formulario"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-          <div className="flex flex-wrap gap-6">
+      <div className="flex flex-1 justify-end">
+        <form
+          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
+          id="formulario"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <div className="flex flex-wrap gap-6 flex-col lg:flex-row">
             <Input
               label="Nome"
               type="text"

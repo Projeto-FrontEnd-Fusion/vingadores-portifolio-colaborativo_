@@ -12,7 +12,7 @@ const Input = ({ id, placeholder, label, error, ...props }: InputProps) => {
   const { register } = useFormContext();
 
   return (
-    <div className="w-full mb-4 md:flex-1">
+    <div className="flex-1 mb-4">
       <label
         htmlFor={id}
         className="block text-white text-sm font-medium mb-1">
