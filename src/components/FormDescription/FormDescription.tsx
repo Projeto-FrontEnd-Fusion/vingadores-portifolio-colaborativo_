@@ -1,10 +1,9 @@
 export function FormDescription() {
   return (
-    <>
-      <div className="p-4 md:p-8 lg:p-12">
-        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-fusion text-center md:text-left">
-          Inscreva-se agora
-        </h1>
+    <div className="w-2/3 p-4">
+      <h2 className="text-white text-3xl font-fusion text-center lg:text-left">
+        Inscreva-se agora
+      </h2>
 
         <p className="text-white py-4 text-xs sm:text-sm md:text-base font-fusion text-center md:text-left">
           Desenvolva suas habilidades trabalhando em prol do acesso à educação em tecnologia.
