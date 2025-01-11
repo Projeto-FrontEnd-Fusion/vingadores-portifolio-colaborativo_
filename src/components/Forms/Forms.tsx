@@ -21,7 +21,6 @@ const Forms = () => {
         id="formulario"
         onSubmit={handleSubmit(onSubmit)}
       >
-          {/* Nome e Sobrenome */}
           <div className="flex flex-wrap gap-6">
             <Input
               label="Nome"
@@ -39,7 +38,6 @@ const Forms = () => {
             />
           </div>
 
-          {/* E-mail */}
           <Input
             label="E-mail"
             type="email"
@@ -48,7 +46,6 @@ const Forms = () => {
             error={errors.email?.message}
           />
 
-          {/* Vaga desejada */}
           <div className="mt-4">
             <label htmlFor="position" className="text-white block text-sm font-medium py-2">
               Vaga desejada
@@ -73,7 +70,6 @@ const Forms = () => {
             )}
           </div>
 
-          {/* Descrição */}
           <div className="mt-4">
             <label htmlFor="description" className="block text-white text-sm font-medium py-2">
               Conte-nos sobre você
@@ -89,7 +85,6 @@ const Forms = () => {
             )}
           </div>
 
-          {/* Botão */}
           <button
             type="submit"
             className="bg-[#585FC5] w-full p-3 mt-4 text-center text-white font-bold rounded-lg focus:ring-2 hover:bg-[#3E4A9A] active:bg-[#2E3A7A] transition ease-in-out "
