@@ -12,7 +12,7 @@ export const Button = ({ isNavbar, ...props }: ButtonProps) => {
       active:bg-[#1A9998] 
       ${isNavbar
         ? "w-[10.313rem] h-[2.563rem] rounded-[2.125rem] py-3 px-4 text-sm leading-[1.05rem]"
-        : "w-[13.625rem] h-12 rounded-3xl py-3 px-8 text-xl leading-6"}`}
+        : "w-[13.625rem] h-12 rounded-3xl py-3 px-8 text-lg leading-6"}`}
     href="#formulario"
     aria-label="Ir para o formulário de inscrição"
   >
