@@ -3,15 +3,40 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FormData } from "../../schema/schema-validation-forms";
 import Input from "../Input/Input";
 import { validVacancy } from "../../schema/schema-validation-forms";
+import { createUser } from "../../api/usersApi/usersApi";
+import { useState } from "react";
+import Message from "../message/Message";
+
+interface IFormRequestStatus {
+  status: 'success' | 'error' | null
+  message: string | null
+}
 
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
-
   const { register, handleSubmit, formState: { errors } } = methods;
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
+  const [formRequestStatus, setFormRequestStatus] = useState<IFormRequestStatus>({
+    status: null,
+    message: null,
+  })
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      await createUser(data)
+      setFormRequestStatus({
+        status: 'success',
+        message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
+      })
+    } catch (error) {
+      console.log(error)
+
+      setFormRequestStatus({
+        status: 'error',
+        message: 'Oops, ocorreu um erro.\n Tente novamente!',
+      })
+    }
+  }
 
   return (
     <FormProvider {...methods}>
@@ -91,6 +116,7 @@ const Forms = () => {
           >
             Enviar formulário
           </button>
+          <Message status={formRequestStatus.status} message={formRequestStatus.message} />
         </form>
       </div>
     </FormProvider>
