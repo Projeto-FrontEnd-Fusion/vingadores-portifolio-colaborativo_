@@ -40,7 +40,7 @@ const Forms = () => {
 
   return (
     <FormProvider {...methods}>
-      <div className="flex flex-1 justify-end">
+      <div className="w-full sm:w-3/4 lg:w-1/3">
         <form
           className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
           id="formulario"
