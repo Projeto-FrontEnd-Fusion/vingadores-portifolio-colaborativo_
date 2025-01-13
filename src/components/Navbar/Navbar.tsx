@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../Button/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Navbar(): JSX.Element {
 
@@ -17,9 +19,9 @@ function Navbar(): JSX.Element {
       </div>
 
       <button className="relative z-50 md:hidden space-y-2 justify-end" onClick={() => setisOpen(!isOpen)}>
-        <span className="block w-8 h-1 bg-white"></span>
-        <span className="block w-8 h-1 bg-white"></span>
-        <span className="block w-8 h-1 bg-white"></span>
+        {isOpen ?
+          <CloseIcon fontSize="large" className="text-white" />
+          : <MenuIcon fontSize="large" className="text-white" />}
       </button>
 
       {/* Links alinhados à direita */}
