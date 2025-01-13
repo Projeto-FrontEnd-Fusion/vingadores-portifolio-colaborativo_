@@ -3,16 +3,14 @@ import { Button } from '../Button/Button';
 function Navbar(): JSX.Element {
   return (
     <nav className="flex w-full items-center justify-between">
-      {/* Logotipo alinhado ao canto superior esquerdo */}
       <div className="absolute top-0 left-0 p-4">
-          <img
-            src="/assets/logotipo_frontend_fusion.png"
-            alt="Logotipo Frontend Fusion"
-            className="h-8 px-3" // Ajuste o tamanho conforme necessário
-          />
+        <img
+          src="/assets/logotipo_frontend_fusion.png"
+          alt="Logotipo Frontend Fusion"
+          className="h-8 px-3"
+        />
       </div>
 
-      {/* Links alinhados à direita */}
       <ul className="flex h-full items-center space-x-6 ml-auto">
         <li className="relative">
           <a
@@ -48,7 +46,7 @@ function Navbar(): JSX.Element {
           </a>
         </li>
         <li>
-          <Button isNavbar={true}/>
+          <Button isNavbar={true} />
         </li>
       </ul>
     </nav>
