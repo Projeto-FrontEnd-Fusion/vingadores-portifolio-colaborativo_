@@ -1,6 +1,8 @@
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
+import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
+import Forms from "./components/Forms/Forms";
 
 function App() {
   return (
