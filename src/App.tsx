@@ -2,6 +2,7 @@ import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
 import Forms from "./components/Forms/Forms";
+import Carousel from "./components/Carousel/Carousel";
 
 function App() {
   return (
@@ -10,7 +11,11 @@ function App() {
         <Navbar />
       </header>
 
-      <main className="flex flex-1 px-8 py-6 gap-8">
+      <main className="px-8 py-6 gap-8">
+        <section>
+          <Carousel />
+        </section>
+
         <section className="w-full flex flex-wrap flex-col justify-center items-center lg:flex-row lg:items-start">
           <FormDescription />
           <Forms />
