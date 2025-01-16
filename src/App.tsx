@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import Forms from "./components/Forms/Forms";
 import Carousel from "./components/Carousel/Carousel";
+import SectionMembers from "./components/SectionMembers/SectionMembers";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
 
       <SectionPresentation />
 
-      <div className="min-h-screen flex items-center justify-center">
+      <SectionMembers />
+
+    <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-md p-4 flex justify-center">
             <Carousel />
       </div>
