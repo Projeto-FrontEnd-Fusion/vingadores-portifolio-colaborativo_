@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { createUser } from "../../api/usersApi/usersApi";
 import { FormData, formSchema, validVacancy } from "../../schema/schema-validation-forms";
@@ -28,6 +28,7 @@ const Forms = () => {
         status: 'success',
         message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
       })
+      methods.reset() // reset nos campos do formulario
     } catch (error) {
       console.log(error)
 
@@ -38,12 +39,6 @@ const Forms = () => {
     }
   }
 
-  // Limpa os campos do formulário
-  useEffect(() => {
-    if (formRequestStatus.status === "success") {
-      methods.reset();
-    }
-  }, [formRequestStatus, methods]);
 
   return (
     <FormProvider {...methods}>
