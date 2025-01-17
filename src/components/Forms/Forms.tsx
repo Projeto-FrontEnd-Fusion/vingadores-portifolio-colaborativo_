@@ -1,10 +1,9 @@
-import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { formSchema, FormData } from "../../schema/schema-validation-forms";
-import Input from "../Input/Input";
-import { validVacancy } from "../../schema/schema-validation-forms";
+import { useEffect, useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { createUser } from "../../api/usersApi/usersApi";
-import { useState } from "react";
+import { FormData, formSchema, validVacancy } from "../../schema/schema-validation-forms";
+import Input from "../Input/Input";
 import Message from "../message/Message";
 
 interface IFormRequestStatus {
@@ -22,6 +21,7 @@ const Forms = () => {
   })
 
   const onSubmit = async (data: FormData) => {
+    console.log('submit')
     try {
       await createUser(data)
       setFormRequestStatus({
@@ -37,6 +37,13 @@ const Forms = () => {
       })
     }
   }
+
+  // Limpa os campos do formulário
+  useEffect(() => {
+    if (formRequestStatus.status === "success") {
+      methods.reset();
+    }
+  }, [formRequestStatus, methods]);
 
   return (
     <FormProvider {...methods}>
