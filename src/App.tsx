@@ -13,7 +13,7 @@ function App() {
 
       <main className="px-8 py-6 gap-8">
         <SectionPresentation />
-        <section className="w-full flex flex-wrap flex-col justify-center items-center lg:flex-row lg:items-start">
+        <section className="w-full flex flex-wrap items-center flex-col lg:flex-row lg:justify-between lg:items-start">
           <FormDescription />
           <Forms />
         </section>
