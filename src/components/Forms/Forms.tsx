@@ -80,6 +80,7 @@ const Forms = () => {
             <select
               id="position"
               defaultValue=""
+              aria-label="Posição"
               className="w-full px-4 py-2 text-white bg-transparent border-solid border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               {...register("position")}
             >
@@ -104,6 +105,7 @@ const Forms = () => {
             <textarea
               id="description"
               placeholder="Escreva um pouco sobre você!"
+              aria-label="Descrição"
               className="w-full h-20 px-4 py-2 bg-transparent text-white border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               {...register("description")}
             />
