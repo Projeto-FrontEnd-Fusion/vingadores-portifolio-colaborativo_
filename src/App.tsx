@@ -1,10 +1,12 @@
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
+import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
 import Carousel from "./components/Carousel/Carousel";
 import { useState } from "react";
+import SectionMembers from "./components/SectionMembers/SectionMembers";
 
 const members = [
   {
@@ -67,6 +69,10 @@ function App() {
       <header className="h-14 p-10">
         <Navbar />
       </header>
+
+      <SectionPresentation />
+
+      <SectionMembers />
 
       <main className="px-8 py-6 gap-8">
         <section className="overflow-hidden">
