@@ -5,8 +5,8 @@ import SectionPresentation from "./components/SectionPresentation/SectionPresent
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
 import Carousel from "./components/Carousel/Carousel";
-import { useState } from "react";
 import SectionMembers from "./components/SectionMembers/SectionMembers";
+import { useState } from "react";
 
 const members = [
   {
@@ -52,15 +52,15 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const totalCards = members.length;
 
-  const handlePrev = () => {
-    if(activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
+  const handleNext = () => {
+    if(activeIndex < totalCards - 1) {
+      setActiveIndex(activeIndex + 1);
     }
   };
 
-  const handleNext = () => {
-    if(activeIndex < totalCards - 1)  {
-      setActiveIndex(activeIndex + 1);
+  const handlePrev = () => {
+    if(activeIndex > 0) {
+      setActiveIndex(activeIndex - 1);
     }
   };
 
