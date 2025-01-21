@@ -3,40 +3,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FormData } from "../../schema/schema-validation-forms";
 import Input from "../Input/Input";
 import { validVacancy } from "../../schema/schema-validation-forms";
-import { createUser } from "../../api/usersApi/usersApi";
-import { useState } from "react";
 import Message from "../message/Message";
-
-interface IFormRequestStatus {
-  status: 'success' | 'error' | null
-  message: string | null
-}
+import useFormHandler from "../../hooks/useFormHandler";
 
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
   const { register, handleSubmit, formState: { errors } } = methods;
-
-  const [formRequestStatus, setFormRequestStatus] = useState<IFormRequestStatus>({
-    status: null,
-    message: null,
-  })
-
-  const onSubmit = async (data: FormData) => {
-    try {
-      await createUser(data)
-      setFormRequestStatus({
-        status: 'success',
-        message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
-      })
-    } catch (error) {
-      console.log(error)
-
-      setFormRequestStatus({
-        status: 'error',
-        message: 'Oops, ocorreu um erro.\n Tente novamente!',
-      })
-    }
-  }
+  const { formRequestStatus, handleFormSubmit } = useFormHandler();
 
   return (
     <FormProvider {...methods}>
@@ -44,7 +17,7 @@ const Forms = () => {
         <form
           className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
           id="formulario"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(handleFormSubmit)}
         >
           <div className="flex flex-wrap gap-6 flex-col lg:flex-row">
             <Input
