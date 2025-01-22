@@ -24,7 +24,7 @@ const MemberCard = ({
   return (
 <div className="bg-[#1A175699] shadow-none rounded-lg p-6 w-full max-w-sm mx-auto transition-all duration-500 ease-in-out transform hover:scale-105">
   <img
-    src={photo || "https://via.placeholder.com/150"}
+    src={photo || "https://github.com/membro"}
     className="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-all duration-300 ease-in-out transform hover:scale-110"
   />
   <div className="flex flex-col items-center justify-center w-full h-full">
