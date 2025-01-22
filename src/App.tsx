@@ -70,7 +70,9 @@ function App() {
         <Navbar />
       </header>
 
+    <main className="px-8 py-6 gap-8">
       <SectionPresentation />
+    </main>
 
       <SectionMembers />
 
