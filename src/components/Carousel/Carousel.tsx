@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 type CarouselProps = {
   children: React.ReactNode;
@@ -8,6 +8,10 @@ const Carousel = ({ children }: CarouselProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
   const childrenArray = React.Children.toArray(children);
+
+  useEffect(() => {
+    scrollToIndex(activeIndex);
+  }, [activeIndex]);
 
   const handlePrev = () => {
     if (activeIndex > 0) {
@@ -42,10 +46,11 @@ const Carousel = ({ children }: CarouselProps) => {
 
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="relative w-full max-w-[80%]">
+      <div className="relative w-full max-w-full">
         <div
           ref={carouselRef}
-          className="flex gap-8 overflow-x-hidden overflow-y-hidden p-4 snap-x snap-mandatory justify-center"
+          className="flex gap-8 overflow-x-auto overflow-y-hidden p-4 snap-x snap-mandatory justify-start md:justify-center sm:px-4 lg:px-12"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {React.Children.map(children, (child, index) => (
             <div
@@ -61,12 +66,13 @@ const Carousel = ({ children }: CarouselProps) => {
                 handleNext,
                 activeIndex,
                 totalCards: childrenArray.length,
+                insideCarousel: true,
               })}
             </div>
           ))}
         </div>
       </div>
-  </div>
+    </div>
   );
 };
 
