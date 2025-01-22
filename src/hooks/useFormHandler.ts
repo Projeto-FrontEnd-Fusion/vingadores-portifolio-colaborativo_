@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { FormData } from "../schema/schema-validation-forms";
-import { createUser } from "../api/usersApi/usersApi";
+import { useCreateUser } from '../api/usersApi/usersApi';
+import { FormData } from '../schema/schema-validation-forms';
+import { useState } from 'react';
 
 interface IFormRequestStatus {
   status: 'success' | 'error' | null;
@@ -8,6 +8,7 @@ interface IFormRequestStatus {
 }
 
 const useFormHandler = () => {
+  const { mutateAsync } = useCreateUser();
   const [formRequestStatus, setFormRequestStatus] = useState<IFormRequestStatus>({
     status: null,
     message: null,
@@ -15,7 +16,7 @@ const useFormHandler = () => {
 
   const handleFormSubmit = async (data: FormData) => {
     try {
-      await createUser(data);
+      await mutateAsync(data);
       setFormRequestStatus({
         status: 'success',
         message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
