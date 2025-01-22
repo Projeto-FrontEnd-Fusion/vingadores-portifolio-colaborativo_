@@ -1,21 +1,43 @@
-import { ComponentProps } from "react";
+import { ComponentProps, Dispatch } from "react";
 
 interface ButtonProps extends ComponentProps<"a"> {
-  isNavbar: boolean;
+  setIsOpen: Dispatch<boolean>
 };
 
-export const Button = ({ isNavbar, ...props }: ButtonProps) => {
-  return <a
-    {...props}
-    className={`bg-[#26EEEF] text-[#1A1756] font-normal text-center transition duration-300 ease-in-out
-      hover:bg-[#1CC4D4] 
-      active:bg-[#1A9998] 
-      ${isNavbar
-        ? "w-[10.313rem] h-[2.563rem] rounded-[2.125rem] py-3 px-4 text-sm leading-[1.05rem]"
-        : "w-[13.625rem] h-12 rounded-3xl py-3 px-8 text-lg leading-6"}`}
-    href="#formulario"
-    aria-label="Ir para o formulário de inscrição"
-  >
-    Inscreva-se aqui
-  </a>;
+export const Button = ({ setIsOpen, ...props }: ButtonProps) => {
+
+  return (
+    <a
+      {...props}
+      className="
+      bg-transparent 
+      text-[#26EEEF] 
+      font-bold
+      text-lg
+      text-center 
+      transition-colors
+      duration-500
+      hover:text-[#1AB8C8]
+      active:text-[#1A9B9D]
+      ease-in-out 
+      w-fit 
+      h-fit 
+      rounded-[2.125rem] 
+      py-3 
+      px-4 
+      mobile-nav:text-sm
+      mobile-nav:bg-[#26EEEF]
+      mobile-nav:text-[#1A1756] 
+      mobile-nav:font-normal 
+      hover:mobile-nav:bg-[#1CC4D4] 
+      active:mobile-nav:bg-[#1A9998] 
+      "
+      href="#formulario"
+      aria-label="Ir para o formulário de inscrição"
+      onClick={() => { setIsOpen(false) }}
+    >
+      Inscreva-se aqui
+    </a>
+  );
 };
+

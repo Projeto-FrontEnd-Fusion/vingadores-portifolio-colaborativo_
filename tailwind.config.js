@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         fusion: ["Helvetica", "Arial", "sans-serif"],
       },
+      screens: {
+        'mobile-nav': '840px',
+      },
     },
   },
   plugins: [],
