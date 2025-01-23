@@ -3,6 +3,7 @@ import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
+import MembersDescription from "./components/MembersDescription/MembersDescription";
 import Carousel from "./components/Carousel/Carousel";
 import { useState } from "react";
 
@@ -12,7 +13,7 @@ const members = [
     name: "Maria de Fátima Nunes Alves",
     role: "Desenvolvedora Frontend",
     technologies: [
-      <img width="32" height="32" src="https://img.icons8.com/external-tal-revivo-tritone-tal-revivo/32/external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo.png" alt="external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo"/>
+      <img width="32" height="32" src="https://img.icons8.com/external-tal-revivo-tritone-tal-revivo/32/external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo.png" alt="external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo" />
     ],
     linkedin: "https://linkedin.com/in/maria-de-fatima-nunes-alves/",
     github: "https://github.com/alvesmariadefatima",
@@ -51,13 +52,13 @@ function App() {
   const totalCards = members.length;
 
   const handlePrev = () => {
-    if(activeIndex > 0) {
+    if (activeIndex > 0) {
       setActiveIndex(activeIndex - 1);
     }
   };
 
   const handleNext = () => {
-    if(activeIndex < totalCards - 1)  {
+    if (activeIndex < totalCards - 1) {
       setActiveIndex(activeIndex + 1);
     }
   };
@@ -70,6 +71,7 @@ function App() {
 
       <main className="px-8 py-6 gap-8">
         <section className="overflow-hidden">
+          <MembersDescription />
           <Carousel>
             {members.map((member) => (
               <MemberCard
