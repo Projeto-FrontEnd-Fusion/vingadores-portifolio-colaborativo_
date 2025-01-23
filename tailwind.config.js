@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'fusion': ['Helvetica', 'Arial', 'sans-serif'],
+        fusion: ["Helvetica", "Arial", "sans-serif"],
       },
     },
   },

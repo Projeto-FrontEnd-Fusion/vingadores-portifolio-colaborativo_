@@ -1,11 +1,9 @@
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
-import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
 import Carousel from "./components/Carousel/Carousel";
-import SectionMembers from "./components/SectionMembers/SectionMembers";
 import { useState } from "react";
 
 const members = [
@@ -52,15 +50,15 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const totalCards = members.length;
 
-  const handleNext = () => {
-    if(activeIndex < totalCards - 1) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
-
   const handlePrev = () => {
     if(activeIndex > 0) {
       setActiveIndex(activeIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if(activeIndex < totalCards - 1)  {
+      setActiveIndex(activeIndex + 1);
     }
   };
 
@@ -69,12 +67,6 @@ function App() {
       <header className="h-14 p-10">
         <Navbar />
       </header>
-
-    <main className="px-8 py-6 gap-8">
-      <SectionPresentation />
-    </main>
-
-      <SectionMembers />
 
       <main className="px-8 py-6 gap-8">
         <section className="overflow-hidden">
@@ -95,7 +87,6 @@ function App() {
             ))}
           </Carousel>
         </section>
-
         <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">
           <FormDescription />
           <Forms />
