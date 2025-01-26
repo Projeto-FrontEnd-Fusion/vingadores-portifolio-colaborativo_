@@ -16,7 +16,8 @@ const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
     <ul
       className={clsx(baseClass, { [openClass]: isOpen, [closedClass]: !isOpen })}
     >
-      <li className="m-3 mt-28 decoration-2 md:px-6 md:p-0 mobile-nav:mt-auto">
+      <li className={clsx("m-3 mt-28 decoration-2 mobile-nav:mt-auto transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100",
+        { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
         <a
           className={`
           text-[#26EEEF] 
@@ -37,7 +38,7 @@ const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
         </a>
         <hr className="mt-2 border-[#26EEEF] mobile-nav:hidden" />
       </li>
-      <li className="m-3">
+      <li className={clsx("m-3 transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100", { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
         <a
           className={`
           text-[#26EEEF] 
@@ -58,7 +59,7 @@ const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
         </a>
         <hr className="mt-2 border-[#26EEEF] mobile-nav:hidden" />
       </li>
-      <li className="m-3">
+      <li className={clsx("m-3 transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100", { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
         <a
           className={`
           text-[#26EEEF] 
@@ -79,7 +80,7 @@ const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
         </a>
         <hr className="mt-2 border-[#26EEEF] mobile-nav:hidden" />
       </li>
-      <li className="m-3 self-center">
+      <li className={clsx("m-3 self-center transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100", { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
         <Button setIsOpen={setIsOpen} type={'button'} />
       </li>
     </ul>
