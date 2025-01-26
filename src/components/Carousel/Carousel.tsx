@@ -1,79 +1,43 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect, useState, ReactNode } from "react";
 
 type CarouselProps = {
-  children: React.ReactNode;
+  children: []
 };
 
-const Carousel = ({ children }: CarouselProps) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const childrenArray = React.Children.toArray(children);
+const Carousel = ({ children }) => {
+  const items = React.Children.toArray(children)
+  const totalItems = React.Children.count(children)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    scrollToIndex(activeIndex);
-  }, [activeIndex]);
-
-  const handlePrev = () => {
-    if (activeIndex > 0) {
-      setActiveIndex((prevIndex) => {
-        const newIndex = prevIndex - 1;
-        scrollToIndex(newIndex);
-        return newIndex;
-      });
-    }
-  };
-
-  const handleNext = () => {
-    if (activeIndex < childrenArray.length - 1) {
-      setActiveIndex((prevIndex) => {
-        const newIndex = prevIndex + 1;
-        scrollToIndex(newIndex);
-        return newIndex;
-      });
-    }
-  };
-
-  const scrollToIndex = (index: number) => {
-    if (carouselRef.current) {
-      const cardWidth = carouselRef.current.children[0].getBoundingClientRect().width;
-      const scrollPosition = index * cardWidth - (carouselRef.current.offsetWidth / 2 - cardWidth / 2);
-      carouselRef.current.scrollTo({
-        left: scrollPosition,
-        behavior: "smooth",
-      });
-    }
-  };
+  const changeCard = (direction: number): void => {
+    setCurrentIndex((prevIndex) => {
+      const newIndex = prevIndex + direction
+      if (newIndex < 0) {
+        return totalItems - 1
+      }
+      if (newIndex >= totalItems) {
+        return 0
+      }
+      return newIndex
+    })
+  }
 
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className="relative w-full max-w-full">
-        <div
-          ref={carouselRef}
-          className="flex gap-8 overflow-x-auto overflow-y-hidden p-4 snap-x snap-mandatory justify-start md:justify-center sm:px-4 lg:px-12"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {React.Children.map(children, (child, index) => (
-            <div
-              key={index}
-              className={`snap-center shrink-0 w-[260px] transition-transform duration-300 ${
-                index === activeIndex
-                  ? "scale-110 opacity-100 bg-[#1A1756]"
-                  : "scale-100 opacity-60 bg-[#1A1756] dark:bg-[#2A2A2A]"
-              }`}
-            >
-              {React.cloneElement(child as React.ReactElement, {
-                handlePrev,
-                handleNext,
-                activeIndex,
-                totalCards: childrenArray.length,
-                insideCarousel: true,
-              })}
+    <div className="flex overflow-x-hidden justify-center h-fit py-10">
+      <button onClick={() => { changeCard(-1) }} className={`relative z-[1] text-white`}>&lt;</button>
+      <div className="flex transition-transform duration-500">
+        {items.map((item, index) => {
+          return (
+            <div key={index} className={`relative ${index === currentIndex ? 'flex [&>div]:scale-110' : ''}`}>
+              {item}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
+      <button onClick={() => { changeCard(1) }} className={`relative text-white z-[1]`}>&gt;</button>
     </div>
   );
 };
 
 export default Carousel;
+

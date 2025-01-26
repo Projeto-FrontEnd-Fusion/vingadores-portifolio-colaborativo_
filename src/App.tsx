@@ -48,20 +48,7 @@ const members = [
 ];
 
 function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const totalCards = members.length;
-
-  const handlePrev = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (activeIndex < totalCards - 1) {
-      setActiveIndex(activeIndex + 1);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#0a0920]">
@@ -70,7 +57,7 @@ function App() {
       </header>
 
       <main className="px-8 py-6 gap-8">
-        <section className="overflow-hidden">
+        <section className="">
           <MembersDescription />
           <Carousel>
             {members.map((member) => (
@@ -81,9 +68,6 @@ function App() {
                 role={member.role}
                 linkedin={member.linkedin}
                 github={member.github}
-                handlePrev={handlePrev}
-                handleNext={handleNext}
-                activeIndex={activeIndex}
                 totalCards={totalCards}
               />
             ))}
