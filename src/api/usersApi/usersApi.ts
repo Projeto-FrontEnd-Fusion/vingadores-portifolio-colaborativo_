@@ -1,14 +1,14 @@
-import { AxiosRequestConfig } from "axios"
-import { usersInstance } from "../axiosInstance"
-import { apiRequest } from "../apiRequest"
-import { IPostUserRequest, IPostUserResponse } from "../../types/usersApi"
+import { useMutation } from '@tanstack/react-query';
+import { usersInstance } from '../axiosInstance';
+import { IPostUserRequest, IPostUserResponse } from '../../types/usersApi';
 
-export const createUser = async (data: IPostUserRequest): Promise<IPostUserResponse> => {
-  const config: AxiosRequestConfig = {
-    method: 'POST',
-    url: '/users',
-    data: data
-  }
+const createUser = async (data: IPostUserRequest): Promise<IPostUserResponse> => {
+  const response = await usersInstance.post('/users', data);
+  return response.data;
+};
 
-  return await apiRequest<IPostUserResponse>(usersInstance, config)
-}
+export const useCreateUser = () => {
+  return useMutation<IPostUserResponse, Error, IPostUserRequest>({
+    mutationFn: createUser,
+  });
+};
