@@ -16,7 +16,13 @@ export default {
         presentation: ["Zen Dots", "sans-serif"],
       },
       screens: {
-        'mobile-nav': '840px',
+        "mobile-nav": "840px",
+      },
+      colors: {
+        "fusion-l-blue": "#26EEEF",
+        "fusion-l-blue-hover": "#1AB8C8",
+        "fusion-l-blue-active": "#1A9B9D",
+        "fusion-d-blue": "#1A1756",
       },
     },
   },
