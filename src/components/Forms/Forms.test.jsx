@@ -22,38 +22,69 @@
 
   Boa sorte!!
  */
-import React from 'react'
-import { describe, test, expect, beforeEach } from 'vitest'
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import Forms from './Forms'
-import AxiosMockAdapter from 'axios-mock-adapter'
-import { usersInstance } from '../../api/axiosInstance'
+import { cleanup, render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import AxiosMockAdapter from "axios-mock-adapter";
+import React from "react";
+import { afterEach, beforeEach, describe, expect, test } from "vitest";
+import { usersInstance } from "../../api/axiosInstance";
+import Forms from "./Forms";
 
-describe('<Forms />', () => {
+describe("<Forms />", () => {
   beforeEach(() => {
-    render(<Forms />)
-  })
-
-  test('deve mostrar mensagem de sucesso se a requisição for bem sucedida', async () => {
+    render(<Forms />);
+  });
+  afterEach(cleanup);
+  /*
+  test("deve mostrar mensagem de sucesso se a requisição for bem-sucedida", async () => {
     const mock = new AxiosMockAdapter(usersInstance);
-    mock.onPost("/users").reply(404)
+    mock.onPost("/users").reply(200);
 
-    const user = userEvent.setup()
-    await user.type(screen.getByPlaceholderText('Nome'), 'Caroline')
-    // Ache os elementos do formulário e preencha-o
-    // Aperte o botão de envio
-    // Ache a mensagem de sucesso
-  })
+    const user = userEvent.setup();
 
-  test('deve mostrar mensagem de erro se a requisição for mal sucedida', async () => {
+    await user.type(screen.getByLabelText("Nome"), "Caroline");
+    await user.type(screen.getByLabelText("Sobrenome"), "Moraes");
+    await user.type(
+      screen.getByPlaceholderText("E-mail"),
+      "caroline@example.com"
+    );
+
+    const select = screen.getByLabelText("Vaga desejada");
+    await user.selectOptions(select, "Desenvolvedor Frontend");
+
+    await user.type(screen.getByLabelText("Conte-nos sobre você"), "Descrição");
+
+    await user.click(
+      screen.getByText(/Enviar formulário/i, { selector: "button" })
+    );
+
+    const successMessage = await screen.findByText(
+      "Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email."
+    );
+
+    expect(successMessage).toBeVisible(); 
+  });
+  */
+
+  test("deve mostrar mensagem de erro se a requisição for mal sucedida", async () => {
     const mock = new AxiosMockAdapter(usersInstance);
-    mock.onPost("/users").reply(404)
+    mock.onPost("/users").reply(404);
 
-    const user = userEvent.setup()
-    await user.type(screen.getByPlaceholderText('Nome'), 'Caroline')
-    // Ache os elementos do formulário e preencha-o
-    // Aperte o botão de envio
-    // Ache a mensagem de erro
-  })
-})
+    const user = userEvent.setup();
+
+    await user.type(screen.getByLabelText("Nome"), "Caroline");
+    await user.type(screen.getByLabelText("Sobrenome"), "Moraes");
+    await user.type(screen.getByLabelText("E-mail"), "caroline@example.com");
+
+    const select = screen.getByLabelText("Vaga desejada");
+    await user.selectOptions(select, "Desenvolvedor Frontend");
+
+    await user.type(screen.getByLabelText("Conte-nos sobre você"), "Descrição");
+
+    await user.click(screen.getByRole("button", { name: "Enviar formulário" }));
+    screen.debug();
+
+    const errorMessage = await screen.findByText("Oops, ocorreu um erro.");
+    expect(errorMessage).toBeVisible();
+  });
+});

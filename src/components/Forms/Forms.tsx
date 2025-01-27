@@ -28,7 +28,7 @@ const Forms = () => {
         status: 'success',
         message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
       })
-      methods.reset() // reset nos campos do formulario
+      methods.reset()
     } catch (error) {
       console.log(error)
 
@@ -121,7 +121,9 @@ const Forms = () => {
             Enviar formulário
           </button>
           <Message status={formRequestStatus.status} message={formRequestStatus.message} />
+
         </form>
+
       </div>
     </FormProvider>
   );
