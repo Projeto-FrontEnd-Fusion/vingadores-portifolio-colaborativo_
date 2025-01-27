@@ -18,7 +18,12 @@ function Navbar(): JSX.Element {
         />
       </div>
 
-      <button className="z-[50] mobile-nav:z-[-1] mobile-nav:absolute" onClick={() => setIsOpen(!isOpen)}>
+      <button
+        className="z-[50] mobile-nav:z-[-1] mobile-nav:absolute mobile-nav:hidden"
+        aria-expanded={isOpen}
+        aria-label="menu"
+        tabIndex={1}
+        onClick={() => setIsOpen(!isOpen)}>
         {isOpen ?
           <CloseIcon fontSize="large" className="text-white" />
           : <MenuIcon fontSize="large" className="text-white" />}
