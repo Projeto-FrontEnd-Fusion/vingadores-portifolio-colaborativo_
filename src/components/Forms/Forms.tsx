@@ -12,14 +12,14 @@ const Forms = () => {
   const { formRequestStatus, handleFormSubmit } = useFormHandler();
 
   return (
-    <FormProvider {...methods}>
-      <div className="w-full sm:w-3/4 lg:w-1/3">
+    <div className="w-full sm:w-10/12 lg:w-2/4">
+      <FormProvider {...methods}>
         <form
-          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
+          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl"
           id="formulario"
           onSubmit={handleSubmit(handleFormSubmit)}
         >
-          <div className="flex flex-wrap gap-6 flex-col lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-6 lg:flex-row">
             <Input
               label="Nome"
               type="text"
@@ -91,8 +91,8 @@ const Forms = () => {
           </button>
           <Message status={formRequestStatus.status} message={formRequestStatus.message} />
         </form>
-      </div>
-    </FormProvider>
+      </FormProvider>
+    </div>
   );
 };
 
