@@ -1,54 +1,25 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { createUser } from "../../api/usersApi/usersApi";
-import { FormData, formSchema, validVacancy } from "../../schema/schema-validation-forms";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { formSchema, FormData } from "../../schema/schema-validation-forms";
 import Input from "../Input/Input";
+import { validVacancy } from "../../schema/schema-validation-forms";
 import Message from "../message/Message";
-
-interface IFormRequestStatus {
-  status: 'success' | 'error' | null
-  message: string | null
-}
+import useFormHandler from "../../hooks/useFormHandler";
 
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
   const { register, handleSubmit, formState: { errors } } = methods;
-
-  const [formRequestStatus, setFormRequestStatus] = useState<IFormRequestStatus>({
-    status: null,
-    message: null,
-  })
-
-  const onSubmit = async (data: FormData) => {
-    console.log('submit')
-    try {
-      await createUser(data)
-      setFormRequestStatus({
-        status: 'success',
-        message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
-      })
-      methods.reset()
-    } catch (error) {
-      console.log(error)
-
-      setFormRequestStatus({
-        status: 'error',
-        message: 'Oops, ocorreu um erro.\n Tente novamente!',
-      })
-    }
-  }
-
+  const { formRequestStatus, handleFormSubmit } = useFormHandler();
 
   return (
-    <FormProvider {...methods}>
-      <div className="w-full sm:w-3/4 lg:w-1/3">
+    <div className="w-full sm:w-10/12 lg:w-2/4">
+      <FormProvider {...methods}>
         <form
-          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
+          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl"
           id="formulario"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(handleFormSubmit)}
         >
-          <div className="flex flex-wrap gap-6 flex-col lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-6 lg:flex-row">
             <Input
               label="Nome"
               type="text"
@@ -80,7 +51,6 @@ const Forms = () => {
             <select
               id="position"
               defaultValue=""
-              aria-label="Posição"
               className="w-full px-4 py-2 text-white bg-transparent border-solid border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               {...register("position")}
             >
@@ -105,7 +75,6 @@ const Forms = () => {
             <textarea
               id="description"
               placeholder="Escreva um pouco sobre você!"
-              aria-label="Descrição"
               className="w-full h-20 px-4 py-2 bg-transparent text-white border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               {...register("description")}
             />
@@ -121,11 +90,9 @@ const Forms = () => {
             Enviar formulário
           </button>
           <Message status={formRequestStatus.status} message={formRequestStatus.message} />
-
         </form>
-
-      </div>
-    </FormProvider>
+      </FormProvider>
+    </div>
   );
 };
 
