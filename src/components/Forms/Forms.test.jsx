@@ -5,12 +5,18 @@ import React from "react";
 import { afterEach, beforeEach, describe, expect, test } from "vitest";
 import { usersInstance } from "../../api/axiosInstance";
 import Forms from "./Forms";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 describe("<Forms />", () => {
   let user = userEvent.setup();
 
   beforeEach(async () => {
-    render(<Forms />);
+    const queryClient = new QueryClient();
+    render(
+      <QueryClientProvider client={queryClient}>
+        <Forms />
+      </QueryClientProvider>
+    );
 
     await user.type(screen.getByLabelText("Nome"), "Caroline");
     await user.type(screen.getByLabelText("Sobrenome"), "Moraes");
