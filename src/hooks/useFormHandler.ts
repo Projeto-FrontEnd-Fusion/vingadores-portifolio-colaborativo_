@@ -22,7 +22,7 @@ const useFormHandler = () => {
         message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
       });
     } catch (error) {
-      console.error(error);
+      console.log(error);
       setFormRequestStatus({
         status: 'error',
         message: 'Oops, ocorreu um erro.\n Tente novamente!',

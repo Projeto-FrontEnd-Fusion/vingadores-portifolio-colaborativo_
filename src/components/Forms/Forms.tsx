@@ -5,12 +5,18 @@ import Input from "../Input/Input";
 import { validVacancy } from "../../schema/schema-validation-forms";
 import Message from "../message/Message";
 import useFormHandler from "../../hooks/useFormHandler";
+import { useEffect } from "react";
 
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
-  const { register, handleSubmit, formState: { errors } } = methods;
+  const { register, handleSubmit, reset, formState: { errors } } = methods;
   const { formRequestStatus, handleFormSubmit } = useFormHandler();
 
+  useEffect(() => {
+    if (formRequestStatus.status === 'success') {
+      reset()
+    }
+  }, [formRequestStatus, reset])
   return (
     <div className="w-full sm:w-10/12 lg:w-2/4">
       <FormProvider {...methods}>
