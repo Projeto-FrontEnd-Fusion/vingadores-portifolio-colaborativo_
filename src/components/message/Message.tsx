@@ -1,4 +1,3 @@
-import React from 'react'
 
 interface MessageProps {
   status: 'success' | 'error' | null
@@ -9,6 +8,7 @@ function Message({ status, message }: MessageProps) {
 
   return (
     <p className={`whitespace-pre-line text-center font-bold ${status === 'success' ? 'text-[#4CAF50]' : 'text-[#F44336]'}`}>{message}</p >
+
   )
 }
 

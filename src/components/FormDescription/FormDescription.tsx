@@ -1,6 +1,7 @@
+
 export function FormDescription() {
   return (
-    <div className="w-2/3 p-4">
+    <div className="w-full lg:w-1/3 p-4">
       <h2 className="text-white text-3xl font-fusion text-center lg:text-left">
         Inscreva-se agora
       </h2>

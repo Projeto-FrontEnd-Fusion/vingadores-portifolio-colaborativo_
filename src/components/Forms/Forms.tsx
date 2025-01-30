@@ -3,50 +3,29 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchema, FormData } from "../../schema/schema-validation-forms";
 import Input from "../Input/Input";
 import { validVacancy } from "../../schema/schema-validation-forms";
-import { createUser } from "../../api/usersApi/usersApi";
-import { useState } from "react";
 import Message from "../message/Message";
-
-interface IFormRequestStatus {
-  status: 'success' | 'error' | null
-  message: string | null
-}
+import useFormHandler from "../../hooks/useFormHandler";
+import { useEffect } from "react";
 
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
-  const { register, handleSubmit, formState: { errors } } = methods;
+  const { register, handleSubmit, reset, formState: { errors } } = methods;
+  const { formRequestStatus, handleFormSubmit } = useFormHandler();
 
-  const [formRequestStatus, setFormRequestStatus] = useState<IFormRequestStatus>({
-    status: null,
-    message: null,
-  })
-
-  const onSubmit = async (data: FormData) => {
-    try {
-      await createUser(data)
-      setFormRequestStatus({
-        status: 'success',
-        message: 'Seja bem-vindo(a) à Comunidade Frontend Fusion!\n Cheque sua caixa de entrada para validar seu email.',
-      })
-    } catch (error) {
-      console.log(error)
-
-      setFormRequestStatus({
-        status: 'error',
-        message: 'Oops, ocorreu um erro.\n Tente novamente!',
-      })
+  useEffect(() => {
+    if (formRequestStatus.status === 'success') {
+      reset()
     }
-  }
-
+  }, [formRequestStatus, reset])
   return (
-    <FormProvider {...methods}>
-      <div className="w-full sm:w-3/4 lg:w-1/3">
+    <div className="w-full sm:w-10/12 lg:w-2/4">
+      <FormProvider {...methods}>
         <form
-          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl mt-4"
+          className="flex flex-col p-10 gap-3 bg-gradient-to-tr from-[#646DF036] to-[#FCFCFD54] rounded-2xl"
           id="formulario"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(handleFormSubmit)}
         >
-          <div className="flex flex-wrap gap-6 flex-col lg:flex-row">
+          <div className="flex flex-col flex-wrap gap-6 lg:flex-row">
             <Input
               label="Nome"
               type="text"
@@ -118,8 +97,8 @@ const Forms = () => {
           </button>
           <Message status={formRequestStatus.status} message={formRequestStatus.message} />
         </form>
-      </div>
-    </FormProvider>
+      </FormProvider>
+    </div>
   );
 };
 

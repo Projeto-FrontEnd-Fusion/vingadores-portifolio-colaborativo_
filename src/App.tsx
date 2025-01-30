@@ -1,11 +1,12 @@
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
 import Navbar from "./components/Navbar/Navbar";
+import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
 import MembersDescription from "./components/MembersDescription/MembersDescription";
 import Carousel from "./components/Carousel/Carousel";
-import { useState } from "react";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const members = [
   {
@@ -47,38 +48,44 @@ const members = [
   },
 ];
 
+
 function App() {
+  const queryClient = new QueryClient();
   const totalCards = members.length;
 
   return (
-    <div className="min-h-screen bg-[#0a0920]">
-      <header className="h-14 p-10">
-        <Navbar />
-      </header>
+    <QueryClientProvider client={queryClient}>
+      <div className="min-h-screen bg-[#0a0920]">
+        <header className="">
+          <Navbar />
+        </header>
 
-      <main className="px-8 py-6 gap-8">
-        <section className="">
-          <MembersDescription />
-          <Carousel>
-            {members.map((member) => (
-              <MemberCard
-                key={member.name}
-                photo={member.photo}
-                name={member.name}
-                role={member.role}
-                linkedin={member.linkedin}
-                github={member.github}
-                totalCards={totalCards}
-              />
-            ))}
-          </Carousel>
-        </section>
-        <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">
-          <FormDescription />
-          <Forms />
-        </section>
-      </main>
-    </div>
+        <main className="px-8 py-6 gap-8">
+          <SectionPresentation />
+          <section className="">
+            <MembersDescription />
+            <Carousel>
+              {members.map((member) => (
+                <MemberCard
+                  key={member.name}
+                  photo={member.photo}
+                  name={member.name}
+                  role={member.role}
+                  linkedin={member.linkedin}
+                  github={member.github}
+                  totalCards={totalCards}
+                />
+              ))}
+            </Carousel>
+          </section>
+
+          <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">
+            <FormDescription />
+            <Forms />
+          </section>
+        </main>
+      </div>
+    </QueryClientProvider>
   );
 }
 
