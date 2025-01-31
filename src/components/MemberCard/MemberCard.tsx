@@ -2,9 +2,9 @@ interface MemberCardProps {
   photo: string;
   name: string;
   role: string;
-  linkedin: string;
-  github: string;
-  totalCards: number;
+  linkedin?: string;
+  github?: string;
+
 }
 
 const MemberCard = ({
@@ -19,6 +19,7 @@ const MemberCard = ({
       <img
         src={photo || "https://github.com/membro"}
         className="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-all duration-300 ease-in-out transform hover:scale-110"
+        alt={`Foto de ${name}`}
       />
       <div className="flex flex-col items-center justify-center w-full">
         <span className="font-fusion text-bold text-white text-center">{name}</span>

@@ -1,12 +1,11 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
-import Navbar from "./components/Navbar/Navbar";
-import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import Forms from "./components/Forms/Forms";
 import MemberCard from './components/MemberCard/MemberCard';
 import MembersDescription from "./components/MembersDescription/MembersDescription";
-import Carousel from "./components/Carousel/Carousel";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Navbar from "./components/Navbar/Navbar";
+import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 
 const members = [
   {
@@ -51,7 +50,7 @@ const members = [
 
 function App() {
   const queryClient = new QueryClient();
-  const totalCards = members.length;
+
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -64,19 +63,19 @@ function App() {
           <SectionPresentation />
           <section className="">
             <MembersDescription />
-            <Carousel>
-              {members.map((member) => (
-                <MemberCard
-                  key={member.name}
-                  photo={member.photo}
-                  name={member.name}
-                  role={member.role}
-                  linkedin={member.linkedin}
-                  github={member.github}
-                  totalCards={totalCards}
-                />
-              ))}
-            </Carousel>
+
+            {members.map((member) => (
+              <MemberCard
+                key={member.name}
+                photo={member.photo}
+                name={member.name}
+                role={member.role}
+                linkedin={member.linkedin}
+                github={member.github}
+
+              />
+            ))}
+
           </section>
 
           <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">
