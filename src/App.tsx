@@ -12,9 +12,7 @@ const members = [
     photo: "https://avatars.githubusercontent.com/u/94319702?v=4",
     name: "Maria de Fátima Nunes Alves",
     role: "Desenvolvedora Frontend",
-    technologies: [
-      <img width="32" height="32" src="https://img.icons8.com/external-tal-revivo-tritone-tal-revivo/32/external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo.png" alt="external-react-a-javascript-library-for-building-user-interfaces-logo-tritone-tal-revivo" />
-    ],
+    technologies: [],
     linkedin: "https://linkedin.com/in/maria-de-fatima-nunes-alves/",
     github: "https://github.com/alvesmariadefatima",
   },
