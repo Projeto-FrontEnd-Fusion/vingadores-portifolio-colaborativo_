@@ -4,12 +4,6 @@ const MembersDescription = () => {
       <h2 className="text-white font-bold text-[24px] sm:text-[28px] md:text-[32px] leading-tight text-center md:text-left">
         Conheça os <br /> membros do time
       </h2>
-
-      <div className="text-white text-xs sm:text-sm md:text-base lg:text-lg mt-4 md:mt-0 leading-relaxed text-center md:text-left">
-        Lorem ipsum dolor sit amet consectetur. Lacus id cursus<br />
-        tincidunt interdum id nisl. Amet risus turpis quam<br />
-        interdum magna malesuada.
-      </div>
     </div>
   );
 };
