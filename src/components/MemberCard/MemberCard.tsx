@@ -23,7 +23,7 @@ const MemberCard = ({
       {
         "scale-105": isActive,
       }
-      )}>
+    )}>
       <img
         src={photo || "https://github.com/membro"}
         className="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-all duration-300 ease-in-out transform hover:scale-110"

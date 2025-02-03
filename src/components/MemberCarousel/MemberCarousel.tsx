@@ -1,4 +1,4 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import { Navigation } from 'swiper/modules'
 import MemberCard from "../MemberCard/MemberCard";
 import 'swiper/swiper-bundle.css'
@@ -47,19 +47,19 @@ const MemberCarousel = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const swiper = useSwiper();
-
-  const handleSlideChange = () => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     console.log(swiper)
+
   };
 
   return (
     <Swiper
       navigation
+      centeredSlides
       loop
       modules={[Navigation]}
       slidesPerView={3}
-      onSlideChange={handleSlideChange}
+      onSlideChange={(swiper) => { handleSlideChange(swiper) }}
     >
       {members.map((member, index) => (
         <SwiperSlide key={index}>
