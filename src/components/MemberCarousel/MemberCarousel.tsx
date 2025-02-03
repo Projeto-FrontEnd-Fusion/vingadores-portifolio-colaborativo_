@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules'
 import MemberCard from "../MemberCard/MemberCard";
+import 'swiper/swiper-bundle.css'
 import { useState } from "react";
 
 const members = [
@@ -50,28 +50,29 @@ const MemberCarousel = () => {
   const swiper = useSwiper();
 
   const handleSlideChange = () => {
-    setActiveIndex(swiper.activeIndex);
+    console.log(swiper)
   };
-  
+
   return (
     <Swiper
-    navigation
-    slidesPerGroup={1}
-    slidesPerView={4}
-    onSlideChange={handleSlideChange}
+      navigation
+      loop
+      modules={[Navigation]}
+      slidesPerView={3}
+      onSlideChange={handleSlideChange}
     >
       {members.map((member, index) => (
         <SwiperSlide key={index}>
-          <MemberCard 
-          photo={member.photo}
-          name={member.name}
-          role={member.role}
-          linkedin={member.linkedin}
-          github={member.github}
-          isActive={index === activeIndex}
+          <MemberCard
+            photo={member.photo}
+            name={member.name}
+            role={member.role}
+            linkedin={member.linkedin}
+            github={member.github}
+            isActive={index === activeIndex}
           />
         </SwiperSlide>
-      ))}            
+      ))}
     </Swiper>
   );
 };
