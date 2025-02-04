@@ -1,5 +1,4 @@
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { Navigation } from 'swiper/modules'
+import { Swiper, SwiperSlide } from "swiper/react";
 import MemberCard from "../MemberCard/MemberCard";
 import 'swiper/swiper-bundle.css'
 import { useState } from "react";
@@ -25,7 +24,7 @@ const members = [
 
   {
     photo: "https://avatars.githubusercontent.com/u/62396328?v=4",
-    name: "Breno Matheus",
+    name: "Breno Mateus",
     role: "Desenvolvedor Frontend",
     technologies: [],
     linkedin: "https://www.linkedin.com/in/breno-mateus-8b9a99211/",
@@ -47,19 +46,12 @@ const MemberCarousel = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const swiper = useSwiper();
-
-  const handleSlideChange = () => {
-    console.log(swiper)
-  };
-
   return (
     <Swiper
-      navigation
+      centeredSlides
       loop
-      modules={[Navigation]}
       slidesPerView={3}
-      onSlideChange={handleSlideChange}
+      onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
     >
       {members.map((member, index) => (
         <SwiperSlide key={index}>
