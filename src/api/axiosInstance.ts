@@ -4,4 +4,8 @@ const usersInstance = axios.create({
   baseURL: 'http://localhost:3000'
 })
 
-export { usersInstance }
+const membersInstance = axios.create({
+  baseURL: 'http://localhost:3000'
+})
+
+export { usersInstance, membersInstance }
