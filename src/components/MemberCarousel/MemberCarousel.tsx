@@ -2,54 +2,11 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import MemberCard from "../MemberCard/MemberCard";
-
-const members = [
-  {
-    photo: "https://avatars.githubusercontent.com/u/94319702?v=4",
-    name: "Maria de Fátima Nunes Alves",
-    role: "Desenvolvedora Frontend",
-    linkedin: "https://linkedin.com/in/maria-de-fatima-nunes-alves/",
-    github: "https://github.com/alvesmariadefatima",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/109109668?v=4",
-    name: "Caroline Moraes",
-    role: "Desenvolvedora Frontend",
-    linkedin: "https://www.linkedin.com/in/carolinemmoraes/",
-    github: "https://github.com/carolinedemoraes",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/62396328?v=4",
-    name: "Breno Mateus",
-    role: "Desenvolvedor Frontend",
-    linkedin: "https://www.linkedin.com/in/breno-mateus-8b9a99211/",
-    github: "https://github.com/Breno-Mateus",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/86496222?v=4",
-    name: "Rafael Euzebio",
-    role: "Desenvolvedor Full-Stack",
-    linkedin: "https://linkedin.com/in/rafael-euzebio",
-    github: "https://github.com/rafael-euzebio",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/86496222?v=4",
-    name: "Rafael Euzebio",
-    role: "Desenvolvedor Full-Stack",
-    linkedin: "https://linkedin.com/in/rafael-euzebio",
-    github: "https://github.com/rafael-euzebio",
-  },
-  {
-    photo: "https://avatars.githubusercontent.com/u/86496222?v=4",
-    name: "Rafael Euzebio",
-    role: "Desenvolvedor Full-Stack",
-    linkedin: "https://linkedin.com/in/rafael-euzebio",
-    github: "https://github.com/rafael-euzebio",
-  },
-];
+import useMembersHandler from "../../hooks/useMembersHandler";
 
 const MemberCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { members } = useMembersHandler()
 
   return (
     <Swiper
@@ -65,14 +22,12 @@ const MemberCarousel = () => {
       }}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
     >
-      {members.map((member, index) => (
+      {members?.map((member, index) => (
         <SwiperSlide key={index}>
           <MemberCard
-            photo={member.photo}
+            photo={member.profile_image}
             name={member.name}
-            role={member.role}
-            linkedin={member.linkedin}
-            github={member.github}
+            role={member.stack}
             isActive={index === activeIndex}
           />
         </SwiperSlide>
