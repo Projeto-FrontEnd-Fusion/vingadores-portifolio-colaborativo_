@@ -4,10 +4,12 @@ interface IGetMemberResponse {
   profile_image: string
   stack: string
   community_level: string
-  professional_profile_url: {
-    platform: string
-    url: string
-  }
+  professional_profile_url: [
+    {
+      platform: string
+      url: string
+    }
+  ]
   skills: [string]
   projects: [{
     id: string
