@@ -33,17 +33,41 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
 
       {isActive && (
         <div className="flex flex-col items-center gap-4">
+          <div>
+            {skills.map((skill) => {
+              return <i className={`devicon-${skill}-plain colored`} style={{ fontSize: "20px" }}></i>
+            })}
+          </div>
+          <div className="flex gap-4">
+            {professional_profile_url?.map((site) => {
+              return (
+                <div className="bg-white rounded-md px-4 py-1 gap-3 flex font-bold text-center truncate transition-all duration-300 ease-in-out transform hover:scale-105">
+                  <figure className="">
+                    <i className={`devicon-${site.platform}-plain colored`} style={{ fontSize: "20px" }}></i>
+                  </figure>
 
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    className="hover:underline"
+                    rel="noopener noreferrer"
+                    aria-label={`Perfil do ${site.platform} de ${name}`}
+                  >
+                    {site.platform}
+                  </a>
+                </div>
+              )
+            })}
           </div>
 
           <div className="flex gap-4 text-white text-xl">
-            <button 
+            <button
               className="hover:scale-125"
               onClick={() => swiper.slidePrev()}
             >
               <IoIosArrowBack />
             </button>
-            <button 
+            <button
               className="hover:scale-125"
               onClick={() => swiper.slideNext()}
             >
