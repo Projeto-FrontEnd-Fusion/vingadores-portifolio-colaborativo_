@@ -23,11 +23,9 @@ const MemberCarousel = () => {
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
     >
       {members?.map((member, index) => (
-        <SwiperSlide key={index}>
+        <SwiperSlide key={member.id}>
           <MemberCard
-            photo={member.profile_image}
-            name={member.name}
-            role={member.stack}
+            member={member}
             isActive={index === activeIndex}
           />
         </SwiperSlide>
