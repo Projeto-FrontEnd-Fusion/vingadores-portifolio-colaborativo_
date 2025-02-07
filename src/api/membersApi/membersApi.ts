@@ -1,4 +1,4 @@
-import { useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { IGetMemberResponse } from "../../types/membersApi";
 import { membersInstance } from "../axiosInstance";
 
@@ -8,8 +8,8 @@ const getMember = async (): Promise<[IGetMemberResponse]> => {
 }
 
 export const useGetMember = () => {
-  return useMutation<[IGetMemberResponse], Error, void>({
-    mutationFn: getMember,
-    onError: (error) => { throw error }
+  return useQuery<[IGetMemberResponse], Error>({
+    queryKey: ['members'],
+    queryFn: getMember,
   },)
 }

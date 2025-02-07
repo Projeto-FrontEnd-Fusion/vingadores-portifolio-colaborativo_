@@ -6,7 +6,7 @@ import useMembersHandler from "../../hooks/useMembersHandler";
 
 const MemberCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { members } = useMembersHandler()
+  const { members } = useMembersHandler();
 
   return (
     <Swiper

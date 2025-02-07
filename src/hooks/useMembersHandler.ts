@@ -1,19 +1,9 @@
-import { useEffect, useState } from "react";
 import { useGetMember } from "../api/membersApi/membersApi";
-import { IGetMemberResponse } from "../types/membersApi";
 
 const useMembersHandler = () => {
-  const { mutateAsync } = useGetMember()
-  const [members, setMembers] = useState<[IGetMemberResponse] | null>(null)
+  const { data: members, error, isLoading } = useGetMember();
 
-  useEffect(() => {
-    (async () => {
-      const members = await mutateAsync()
-      setMembers(members)
-    })()
-  }, [mutateAsync])
-
-  return { members }
+  return { members, error, isLoading };
 }
 
-export default useMembersHandler
+export default useMembersHandler;
