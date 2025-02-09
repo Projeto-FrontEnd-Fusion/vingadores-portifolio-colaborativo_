@@ -35,7 +35,7 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
         <div className="flex flex-col items-center gap-4">
           <div>
             {skills.map((skill) => {
-              return <i className={`devicon-${skill}-plain colored`} style={{ fontSize: "20px" }}></i>
+              return <i aria-label={skill} className={`devicon-${skill}-plain colored`} style={{ fontSize: "20px" }}></i>
             })}
           </div>
           <div className="flex gap-4">
