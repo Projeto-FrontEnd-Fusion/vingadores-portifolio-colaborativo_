@@ -14,6 +14,7 @@ const MemberCarousel = () => {
       initialSlide={0}
       centeredSlides={true}
       slidesPerView={1}
+      className="h-96"
       breakpoints={{
         320: { slidesPerView: 1, centeredSlides: true },
         480: { slidesPerView: 2, centeredSlides: false },
@@ -23,7 +24,9 @@ const MemberCarousel = () => {
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
     >
       {members?.map((member, index) => (
-        <SwiperSlide key={member.id}>
+        <SwiperSlide key={member.id}
+          style={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        >
           <MemberCard
             member={member}
             isActive={index === activeIndex}

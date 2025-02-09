@@ -16,9 +16,9 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
 
   return (
     <div className={clsx(
-      "bg-[#1A175699] rounded-lg flex flex-col items-center justify-center gap-4 py-4 h-72 w-64 mx-4 transition-all duration-500 ease-in-out",
+      "bg-[#1A175699] rounded-lg flex flex-col items-center justify-center gap-4 py-4 h-72 w-64 mx-4 transition-all duration-1000 ease-in-out",
       {
-        "h-80 w-80 p-4": isActive,
+        "h-96 w-80 p-4": isActive,
       }
     )}>
       <img
