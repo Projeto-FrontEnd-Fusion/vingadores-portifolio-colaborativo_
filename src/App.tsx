@@ -18,9 +18,9 @@ function App() {
           <Navbar />
         </header>
 
-        <main className="px-8 py-6 gap-8">
+        <main className="px-8 py-6">
           <SectionPresentation />
-          <section className="">
+          <section className="pb-16">
             <MembersDescription />
             <MemberCarousel />
           </section>

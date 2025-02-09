@@ -3,7 +3,7 @@ import { Button } from "../Button/Button";
 const SectionPresentation = () => {
   return (
     <section className="text-white flex items-center flex-col gap-11 px-1 py-11
-                            lg:flex-row lg:items-start lg:px-11 lg:pt-24 lg:pb-44 lg:gap-24"
+                            lg:flex-row lg:items-start lg:px-11 lg:pt-24 lg:pb-32 lg:gap-24"
     >
       <div className="flex flex-col gap-8 items-center px-2
                             lg:w-1/2 lg:px-0"

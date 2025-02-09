@@ -16,7 +16,7 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
 
   return (
     <div className={clsx(
-      "bg-[#1A175699] rounded-lg flex flex-col items-center justify-center gap-4 py-4 h-72 w-64 mx-4 transition-all duration-1000 ease-in-out",
+      "bg-[#1A175699] rounded-lg flex flex-col items-center justify-center gap-4 p-4 h-72 w-64 mx-4 transition-all duration-1000 ease-in-out",
       {
         "h-96 w-80 p-4": isActive,
       }
@@ -26,7 +26,7 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
         className="w-24 h-24 rounded-full mx-auto mb-4 object-cover transition-all duration-300 ease-in-out transform hover:scale-110"
         alt={`Foto de ${name}`}
       />
-      <div className="flex flex-col items-center justify-center gap-4 w-full font-fusion">
+      <div className="flex flex-col items-center justify-center gap-4 w-full font-fusion text-center">
         <span className="text-xl text-white text-center font-bold">{name}</span>
         <span className="text-sm text-white mb-4">{stack}</span>
       </div>
