@@ -18,7 +18,7 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
     <div className={clsx(
       "bg-[#1A175699] rounded-lg flex flex-col items-center justify-center gap-4 p-4 h-72 w-64 mx-4 transition-all duration-1000 ease-in-out",
       {
-        "h-96 w-80 p-4": isActive,
+        "h-96 w-80": isActive,
       }
     )}>
       <img
@@ -33,9 +33,9 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
 
       {isActive && (
         <div className="flex flex-col items-center gap-4">
-          <div>
+          <div className="flex items-center justify-center">
             {skills.map((skill) => {
-              return <i aria-label={skill} className={`devicon-${skill}-plain colored`} style={{ fontSize: "20px" }}></i>
+              return <i aria-label={skill} className={`devicon-${skill}-plain colored p-2`} style={{ fontSize: "20px" }}></i>
             })}
           </div>
           <div className="flex gap-4">
