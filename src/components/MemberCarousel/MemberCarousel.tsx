@@ -18,7 +18,7 @@ const MemberCarousel = () => {
       breakpoints={{
         320: { slidesPerView: 1, centeredSlides: true },
         768: { slidesPerView: 3, centeredSlides: true, spaceBetween: 30 },
-        1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 5 },
+        1024: { slidesPerView: 3, centeredSlides: true, spaceBetween: 5 },
         1280: { slidesPerView: 4, centeredSlides: false, spaceBetween: 5 },
       }}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
