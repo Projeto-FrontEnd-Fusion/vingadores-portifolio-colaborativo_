@@ -1,17 +1,16 @@
 import { useEffect } from "react";
 import { useGetMember } from "../api/membersApi/membersApi";
-import { useUserStore } from "../store/useUserStore";
+import { useMemberStore } from "../store/useMemberStore";
 
 const useMembersHandler = () => {
   const { data: members, error, isLoading } = useGetMember();
-  const setUsers = useUserStore((state) => state.setUsers);
-
+  const setMembers = useMemberStore((state) => state.setMembers);
 
   useEffect(() => {
-    if (members) {
-      setUsers(members);
+    if (members && members.length > 0) {
+      setMembers(members);
     }
-  }, [members, setUsers]);
+  }, [members, setMembers]);
 
   return { members, error, isLoading };
 };

@@ -2,11 +2,15 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import MemberCard from "../MemberCard/MemberCard";
+import { useMemberStore } from "../../store/useMemberStore";
 import useMembersHandler from "../../hooks/useMembersHandler";
+import useSelectedMember from "../../hooks/useSelectedMember";
 
 const MemberCarousel = () => {
+  useMembersHandler();
   const [activeIndex, setActiveIndex] = useState(0);
-  const { members } = useMembersHandler();
+  const members = useMemberStore((state) => state.members);
+  useSelectedMember(activeIndex, members);
 
   return (
     <Swiper
