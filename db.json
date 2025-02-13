@@ -1,14 +1,5 @@
 {
-  "users": [
-    {
-      "id": "3279",
-      "name": "BRENO",
-      "lastName": "DOS SANTOS",
-      "email": "brenomateus36@gmail.com",
-      "position": "Desenvolvedor Frontend",
-      "description": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
-    }
-  ],
+  "users": [],
   "members": [
     {
       "id": "4c2f4c1d-5b6e-4978-9a3c-1d2e8f4g6h9k",

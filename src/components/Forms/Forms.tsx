@@ -18,8 +18,6 @@ const Forms = () => {
     }
   }, [isSuccess, reset]);
 
-  const status = isSuccess ? "success" : isError ? "error" : null;
-
   return (
     <div className="w-full sm:w-10/12 lg:w-2/4">
       <FormProvider {...methods}>
@@ -98,7 +96,7 @@ const Forms = () => {
           >
             Enviar formulário
           </button>
-          <Message status={status} />
+          <Message isSuccess={isSuccess} isError={isError} />
         </form>
       </FormProvider>
     </div>
