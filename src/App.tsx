@@ -20,7 +20,7 @@ function App() {
 
         <main className="px-8 py-6">
           <SectionPresentation />
-          <section className="pb-16">
+          <section id="equipes" className="pb-16">
             <MembersDescription />
             <MemberCarousel />
           </section>
