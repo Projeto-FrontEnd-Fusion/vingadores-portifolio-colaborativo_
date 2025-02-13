@@ -10,13 +10,16 @@ import { useEffect } from "react";
 const Forms = () => {
   const methods = useForm<FormData>({ resolver: zodResolver(formSchema) });
   const { register, handleSubmit, reset, formState: { errors } } = methods;
-  const { formRequestStatus, handleFormSubmit } = useFormHandler();
+  const { handleFormSubmit, isSuccess, isError } = useFormHandler();
 
   useEffect(() => {
-    if (formRequestStatus.status === 'success') {
-      reset()
+    if (isSuccess) {
+      reset();
     }
-  }, [formRequestStatus, reset])
+  }, [isSuccess, reset]);
+
+  const status = isSuccess ? "success" : isError ? "error" : null;
+
   return (
     <div className="w-full sm:w-10/12 lg:w-2/4">
       <FormProvider {...methods}>
@@ -95,7 +98,7 @@ const Forms = () => {
           >
             Enviar formulário
           </button>
-          <Message status={formRequestStatus.status} message={formRequestStatus.message} />
+          <Message status={status} />
         </form>
       </FormProvider>
     </div>
