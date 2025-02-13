@@ -1,17 +1,15 @@
-import React, { Dispatch } from 'react'
+import { useContext } from 'react'
 import { clsx } from 'clsx'
 import { Button } from '../Button/Button'
+import NavbarContext from '../../store/NavbarContext'
 
-interface NavLinksProps {
-  isOpen: boolean,
-  setIsOpen: Dispatch<boolean>
-}
-
-const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
+const NavLinks = () => {
   const baseClass = 'bg-[#1C1A40] absolute top-0 left-0 flex flex-col h-lvh w-screen transition-all duration-1000 ease-in-out mobile-nav:flex-row nav:absolute mobile-nav:absolute'
   const openClass = 'max-h-lvh touch-none'
   const closedClass = 'max-h-0 overflow-hidden mobile-nav:relative mobile-nav:h-fit mobile-nav:max-h-fit mobile-nav:w-fit mobile-nav:bg-transparent'
   const links = ['Equipes', 'Projetos', 'Tecnologias']
+
+  const { isOpen } = useContext(NavbarContext)
 
   return (
     <ul
@@ -45,7 +43,7 @@ const NavLinks = ({ isOpen, setIsOpen }: NavLinksProps) => {
         })
       }
       <li className={clsx("m-3 self-center transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100", { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
-        <Button setIsOpen={setIsOpen} isNavbar={true} />
+        <Button isNavbar={true} />
       </li>
     </ul>
 
