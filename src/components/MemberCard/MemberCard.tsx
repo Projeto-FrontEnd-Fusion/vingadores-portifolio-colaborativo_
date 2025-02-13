@@ -35,13 +35,13 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center justify-center">
             {skills.map((skill) => {
-              return <i aria-label={skill} className={`devicon-${skill}-plain colored p-2`} style={{ fontSize: "20px" }}></i>
+              return <i key={skill} aria-label={skill} className={`devicon-${skill}-plain colored p-2`} style={{ fontSize: "20px" }}></i>
             })}
           </div>
           <div className="flex gap-4">
             {professional_profile_url?.map((site) => {
               return (
-                <div className="bg-white rounded-md px-4 py-1 gap-3 flex font-bold text-center truncate transition-all duration-300 ease-in-out transform hover:scale-105">
+                <div key={site.url} className="bg-white rounded-md px-4 py-1 gap-3 flex font-bold text-center truncate transition-all duration-300 ease-in-out transform hover:scale-105">
                   <figure className="">
                     <i className={`devicon-${site.platform}-plain colored`} style={{ fontSize: "20px" }}></i>
                   </figure>
