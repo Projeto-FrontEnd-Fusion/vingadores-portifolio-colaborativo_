@@ -63,12 +63,14 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
           <div className="flex gap-4 text-white text-xl">
             <button
               className="hover:scale-125"
+              aria-label="membro anterior"
               onClick={() => swiper.slidePrev()}
             >
               <IoIosArrowBack />
             </button>
             <button
               className="hover:scale-125"
+              aria-label="próximo membro"
               onClick={() => swiper.slideNext()}
             >
               <IoIosArrowForward />
