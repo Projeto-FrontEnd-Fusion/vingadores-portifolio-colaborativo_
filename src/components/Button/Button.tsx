@@ -1,13 +1,15 @@
-import { ComponentProps, Dispatch } from "react";
+import { ComponentProps, Dispatch, useContext } from "react";
 import clsx from "clsx"
+import NavbarContext from "../../store/NavbarContext";
 
 interface ButtonProps extends ComponentProps<"a"> {
   setIsOpen?: Dispatch<boolean>;
   isNavbar: boolean
 }
 
-export const Button = ({ setIsOpen, isNavbar, ...props }: ButtonProps) => {
-  const mobileSectionPresentationClasses = "bg-fusion-l-blue text-fusion-d-blue font-normal hover:bg-fusion-l-blue-hover active:bg-fusion-l-blue-active text-fusion-d-blue hover:text-fusion-d-blue"
+export const Button = ({ isNavbar, ...props }: ButtonProps) => {
+  const mobileSectionPresentationClasses = "bg-fusion-l-blue font-normal hover:bg-fusion-l-blue-hover active:bg-fusion-l-blue-active text-fusion-d-blue hover:text-fusion-d-blue"
+  const { setIsOpen } = useContext(NavbarContext)
 
   return (
     <a

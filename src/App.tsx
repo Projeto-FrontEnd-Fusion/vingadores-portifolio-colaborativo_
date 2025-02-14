@@ -1,13 +1,16 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import "./App.css";
 import FormDescription from "./components/FormDescription/FormDescription";
+import Forms from "./components/Forms/Forms";
+import MembersDescription from "./components/MembersDescription/MembersDescription";
 import Navbar from "./components/Navbar/Navbar";
 import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
-import Forms from "./components/Forms/Forms";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-const queryClient = new QueryClient();
+import MemberCarousel from './components/MemberCarousel/MemberCarousel';
 
 function App() {
+  const queryClient = new QueryClient();
+
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen bg-[#0a0920]">
@@ -15,9 +18,14 @@ function App() {
           <Navbar />
         </header>
 
-        <main className="px-8 py-6 gap-8">
+        <main className="px-8 py-6">
           <SectionPresentation />
-          <section className="w-full flex flex-wrap items-center flex-col lg:flex-row lg:justify-between lg:items-start">
+          <section id="Equipes" className="pb-16">
+            <MembersDescription />
+            <MemberCarousel />
+          </section>
+
+          <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">
             <FormDescription />
             <Forms />
           </section>
