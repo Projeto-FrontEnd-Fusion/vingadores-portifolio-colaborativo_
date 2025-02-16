@@ -4,8 +4,9 @@ const Footer = () => {
             <hr className="border-t border-gray-300 mb-4" />
 
             <div className="flex justify-between items-end">
-                <nav>
-                    <ul className="flex flex-row items-start space-x-4">
+                <nav className="flex items-center space-x-6">
+                    <img src="/assets/logotipo_frontend_fusion.png" alt="Logotipo Frontend Fusion" />
+                    <ul className="flex flex-row space-x-4">
                         <li>
                             <a href="#" className="text-fusion-links-rodape">Contato</a>
                         </li>
