@@ -24,12 +24,12 @@ const Footer = () => {
                 <ul className="flex space-x-4 mt-2">
                     <li>
                         <a href="https://www.linkedin.com/company/comunidade-frontend-fusion/" target="_blank" rel="noopener noreferrer" className="text-fusion-links-rodape">
-                            <i className="devicon-linkedin-plain text-blue-600"></i>
+                            <i className="devicon-linkedin-plain text-[#646DF0] text-2xl"></i>
                         </a>
                     </li>
                     <li>
                         <a href="https://github.com/Projeto-FrontEnd-Fusion" target="_blank" rel="noopener noreferrer" className="text-fusion-links-rodape">
-                            <i className="devicon-github-original text-white"></i>
+                            <i className="devicon-github-original text-[#646DF0] text-2xl"></i>
                         </a>
                     </li>
                 </ul>
