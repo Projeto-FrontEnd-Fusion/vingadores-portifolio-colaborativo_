@@ -23,8 +23,7 @@ export default {
         "fusion-l-blue-hover": "#1AB8C8",
         "fusion-l-blue-active": "#1A9B9D",
         "fusion-d-blue": "#1A1756",
-        "fusion-rodape-redes-sociais": "#E0DEF7",
-        "fusion-links-rodape": "#ADAEB6"
+        "fusion-purple": "#646DF0"
       },
     },
   },
