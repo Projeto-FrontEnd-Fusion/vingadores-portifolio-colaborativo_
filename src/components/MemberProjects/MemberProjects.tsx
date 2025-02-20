@@ -1,19 +1,33 @@
 import { useMemberStore } from "../../store/useMemberStore";
+import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "../ProjectCard/ProjectCard";
+import CarouselNavigation from "../CarouselNavigation/CarouselNavigation";
+import "swiper/swiper-bundle.css";
 
 const MemberProjects = () => {
   const selectedMember = useMemberStore((state) => state.selectedMember);
 
   return (
-    <section className="flex flex-col gap-16 mt-16 mb-28 font-fusion text-white">
-      <h3 className="font-normal text-4xl text-center">Meus Projetos</h3>
+    <section className="mt-20">
+      <h3 className="text-white font-normal text-4xl text-center">Meus Projetos</h3>
+      <div className="mt-16 font-fusion">
 
-      {selectedMember?.projects.map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
+        <Swiper
+          loop={true}
+          centeredSlides={true}
+          slidesPerView={1}
+        >
+          {selectedMember?.projects.map((project) => (
+            <SwiperSlide>
+              <ProjectCard key={project.id} project={project} />
+            </SwiperSlide>
+
+          ))}
+          <CarouselNavigation margin={true} label="projeto" />
+        </Swiper>
+      </div>
     </section>
   );
 };
-
 
 export default MemberProjects;
