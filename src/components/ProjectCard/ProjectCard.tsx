@@ -16,7 +16,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         alt={project.project_name}
       />
 
-      <div className="flex flex-col gap-3 py-6">
+      <div className="flex flex-col gap-3 py-6 text-white">
         <h4 className="text-xl font-bold">{project.project_name}</h4>
         <p>{project.description}</p>
 
