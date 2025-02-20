@@ -32,9 +32,7 @@ function App() {
           </section>
         </main>
 
-        <section>
-          <Footer />
-        </section>
+        <Footer />
       </div>
     </QueryClientProvider>
   );
