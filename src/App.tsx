@@ -6,6 +6,7 @@ import MembersDescription from "./components/MembersDescription/MembersDescripti
 import Navbar from "./components/Navbar/Navbar";
 import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import MemberCarousel from './components/MemberCarousel/MemberCarousel';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const queryClient = new QueryClient();
@@ -30,6 +31,8 @@ function App() {
             <Forms />
           </section>
         </main>
+
+        <Footer />
       </div>
     </QueryClientProvider>
   );
