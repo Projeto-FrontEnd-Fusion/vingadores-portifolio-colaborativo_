@@ -23,10 +23,11 @@ export default {
         "fusion-l-blue-hover": "#1AB8C8",
         "fusion-l-blue-active": "#1A9B9D",
         "fusion-d-blue": "#1A1756",
+        "fusion-purple": "#646DF0",
+        "fusion-purple-hover": "#5A5EDB",
+        "fusion-purple-active": "#4E52C4",
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("tailwind-scrollbar-hide")],
 };

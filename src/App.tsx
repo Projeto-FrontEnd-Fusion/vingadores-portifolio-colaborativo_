@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import MemberCarousel from './components/MemberCarousel/MemberCarousel';
 import MemberProjects from './components/MemberProjects/MemberProjects';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const queryClient = new QueryClient();
@@ -32,6 +33,8 @@ function App() {
             <Forms />
           </section>
         </main>
+
+        <Footer />
       </div>
     </QueryClientProvider>
   );
