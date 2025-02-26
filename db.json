@@ -17,14 +17,24 @@
           "url": "https://www.linkedin.com/in/breno-mateus-8b9a99211/"
         }
       ],
-      "skills": ["typescript", "react", "tailwindcss", "axios", "redux"],
+      "skills": [
+        "typescript",
+        "react",
+        "tailwindcss",
+        "axios",
+        "redux"
+      ],
       "projects": [
         {
           "id": "5299c19a-797b-4cd2-8611-4e19a8c59bb1",
           "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
           "project_name": "Bugmart",
           "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -32,11 +42,18 @@
           "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
           "project_name": "Digita",
           "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
@@ -54,14 +71,24 @@
           "url": "https://www.linkedin.com/in/carolinemmoraes"
         }
       ],
-      "skills": ["typescript", "react", "tailwindcss", "redux", "jest"],
+      "skills": [
+        "typescript",
+        "react",
+        "tailwindcss",
+        "redux",
+        "jest"
+      ],
       "projects": [
         {
           "id": "c8d2ebe8-0a76-4838-8c5a-c67f400925a2",
           "project_cover": "https://woovina.com/images/2024/07/15/sound-cover.png",
           "project_name": "Sound",
           "description": "Sound is a sleek, professional template for audio equipment stores. Featuring a modern design, user-friendly interface, and SEO optimization, it ensures your products are showcased attractively. With built-in sales management tools and device compatibility, Sound is the ideal choice to elevate your brand and increase sales.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -69,11 +96,18 @@
           "project_cover": "https://woovina.com/images/2024/03/14/ewear-cover.png",
           "project_name": "Ewear",
           "description": "Ewear is a lingerie and innerwear website template built on WordPress, WooCommerce, Elementor, and the Woovina theme. With fast loading speeds, mobile-friendly design, and easy customization, Ewear is the ideal choice for those looking to start an online business in this niche.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "8a7b4c2d-5e6f-4a3b-9c8d-7a6b5c4d3e2f",
@@ -106,7 +140,11 @@
           "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
           "project_name": "Bugmart",
           "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -114,11 +152,18 @@
           "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
           "project_name": "Digita",
           "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "8d7c6b5a-4e3f-2a1c-9b8d-7f6e5d4c3b2a",
@@ -136,26 +181,42 @@
           "url": "https://www.linkedin.com/in/lucas-maia-5bb52b205/"
         }
       ],
-      "skills": ["azure", "trello", "slack", "jira"],
+      "skills": [
+        "azure",
+        "trello",
+        "slack",
+        "jira"
+      ],
       "projects": [
         {
-          "id": "ea467c3a-82b7-4fd4-b52a-6c7f9e68344e",
-          "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
-          "project_name": "Bugmart",
-          "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "id": "709c33f7-aaca-4e03-9417-0d348f713daa",
+          "project_cover": "https://woovina.com/images/2024/07/15/sound-cover.png",
+          "project_name": "Sound",
+          "description": "Sound is a sleek, professional template for audio equipment stores. Featuring a modern design, user-friendly interface, and SEO optimization, it ensures your products are showcased attractively. With built-in sales management tools and device compatibility, Sound is the ideal choice to elevate your brand and increase sales.",
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
-          "id": "b8aa5a00-7b72-4678-bc3a-a953c2a45441",
-          "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
-          "project_name": "Digita",
-          "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "id": "16ae4bf7-8d54-4a02-9f07-8fc8fd00f0c4",
+          "project_cover": "https://woovina.com/images/2024/03/14/ewear-cover.png",
+          "project_name": "Ewear",
+          "description": "Ewear is a lingerie and innerwear website template built on WordPress, WooCommerce, Elementor, and the Woovina theme. With fast loading speeds, mobile-friendly design, and easy customization, Ewear is the ideal choice for those looking to start an online business in this niche.",
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "a5c4f2d1-5f6e-4b3a-8c7d-2e1f6a4b3c5d",
@@ -188,7 +249,11 @@
           "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
           "project_name": "Bugmart",
           "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -196,11 +261,18 @@
           "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
           "project_name": "Digita",
           "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "2560ee75-7b45-48cc-9921-1ff942747ebf",
@@ -233,7 +305,11 @@
           "project_cover": "https://woovina.com/images/2024/07/15/sound-cover.png",
           "project_name": "Sound",
           "description": "Sound is a sleek, professional template for audio equipment stores. Featuring a modern design, user-friendly interface, and SEO optimization, it ensures your products are showcased attractively. With built-in sales management tools and device compatibility, Sound is the ideal choice to elevate your brand and increase sales.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -241,11 +317,18 @@
           "project_cover": "https://woovina.com/images/2024/03/14/ewear-cover.png",
           "project_name": "Ewear",
           "description": "Ewear is a lingerie and innerwear website template built on WordPress, WooCommerce, Elementor, and the Woovina theme. With fast loading speeds, mobile-friendly design, and easy customization, Ewear is the ideal choice for those looking to start an online business in this niche.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "e7b3c1a2-5f8e-4c3b-9c1e-1c2e3f4a5b6c",
@@ -263,14 +346,24 @@
           "url": "https://www.linkedin.com/in/https://www.linkedin.com/in/marcos-arag%C3%A3o-353134203/"
         }
       ],
-      "skills": ["react", "angular", "kotlin", "flutter", "figma"],
+      "skills": [
+        "react",
+        "angular",
+        "kotlin",
+        "flutter",
+        "figma"
+      ],
       "projects": [
         {
           "id": "fe4bda58-9283-493e-883b-cfb937e5449e",
           "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
           "project_name": "Bugmart",
           "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -278,11 +371,18 @@
           "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
           "project_name": "Digita",
           "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "2a9f4c1d-5b6e-4978-9a3c-1d2e8f4g6h7i",
@@ -311,23 +411,34 @@
       ],
       "projects": [
         {
-          "id": "7f6f65f9-4f47-4842-9b9d-861dcd296080",
-          "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
-          "project_name": "Bugmart",
-          "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "id": "c8d2ebe8-0a76-4838-8c5a-c67f400925a2",
+          "project_cover": "https://woovina.com/images/2024/07/15/sound-cover.png",
+          "project_name": "Sound",
+          "description": "Sound is a sleek, professional template for audio equipment stores. Featuring a modern design, user-friendly interface, and SEO optimization, it ensures your products are showcased attractively. With built-in sales management tools and device compatibility, Sound is the ideal choice to elevate your brand and increase sales.",
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
-          "id": "8f487247-c91c-4d12-aa10-c1a332842e98",
-          "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
-          "project_name": "Digita",
-          "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "id": "662654d0-203a-46dc-89d5-c1f2d255ce2b",
+          "project_cover": "https://woovina.com/images/2024/03/14/ewear-cover.png",
+          "project_name": "Ewear",
+          "description": "Ewear is a lingerie and innerwear website template built on WordPress, WooCommerce, Elementor, and the Woovina theme. With fast loading speeds, mobile-friendly design, and easy customization, Ewear is the ideal choice for those looking to start an online business in this niche.",
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     },
     {
       "id": "6f4c2a4c-3a4f-4b3e-8f6d-5a4b3c2d1e4f",
@@ -345,14 +456,22 @@
           "url": "https://www.linkedin.com/in/ronaldoacosta/"
         }
       ],
-      "skills": ["jira", "trello", "slack"],
+      "skills": [
+        "jira",
+        "trello",
+        "slack"
+      ],
       "projects": [
         {
           "id": "52e1004c-12f9-429e-8fa6-59b56ddc64c6",
           "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
           "project_name": "Bugmart",
           "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         },
         {
@@ -360,11 +479,18 @@
           "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
           "project_name": "Digita",
           "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": ["Java", "JavaScript", "Python"],
+          "technologies": [
+            "Java",
+            "JavaScript",
+            "Python"
+          ],
           "projectUrl": "https://example.com"
         }
       ],
-      "soft_skills": ["Communication", "Teamwork"]
+      "soft_skills": [
+        "Communication",
+        "Teamwork"
+      ]
     }
   ]
 }
