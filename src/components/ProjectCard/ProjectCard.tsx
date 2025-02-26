@@ -18,7 +18,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h4 className="text-xl font-bold">{project.project_name}</h4>
         <p>{project.description}</p>
 
-        <a href={project.project_url || "#"} target="_blank" rel="noopener noreferrer" >
+        <a className="hover:text-fusion-purple-hover active:text-fusion-purple-active transition-colors duration-500 ease-in-out"
+          href={project.project_url || "#"}
+          target="_blank" rel="noopener noreferrer" >
           MAIS DETALHES
         </a>
         <hr />
