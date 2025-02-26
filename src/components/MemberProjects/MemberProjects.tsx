@@ -18,8 +18,8 @@ const MemberProjects = () => {
           slidesPerView={1}
         >
           {selectedMember?.projects.map((project) => (
-            <SwiperSlide>
-              <ProjectCard key={project.id} project={project} />
+            <SwiperSlide key={project.id} >
+              <ProjectCard project={project} />
             </SwiperSlide>
 
           ))}

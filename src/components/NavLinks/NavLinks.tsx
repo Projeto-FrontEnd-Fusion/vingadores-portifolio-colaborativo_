@@ -18,7 +18,7 @@ const NavLinks = () => {
       {
         links.map((link) => {
           return (
-            <li className={clsx("m-3 first:mt-28 decoration-2 mobile-nav:mt-auto transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100 mobile-nav:first:mt-auto ",
+            <li key={link} className={clsx("m-3 first:mt-28 decoration-2 mobile-nav:mt-auto transition-opacity duration-1000 ease-in-out mobile-nav:opacity-100 mobile-nav:first:mt-auto ",
               { 'opacity-100': isOpen, 'opacity-0': !isOpen })}>
               <a
                 className={`
