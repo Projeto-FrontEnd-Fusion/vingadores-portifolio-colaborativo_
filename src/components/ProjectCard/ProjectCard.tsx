@@ -4,7 +4,6 @@ interface Project {
   project_name: string;
   description: string;
   project_url: string;
-  link?: string;
 }
 
 const ProjectCard = ({ project }: { project: Project }) => {
@@ -19,7 +18,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
         <h4 className="text-xl font-bold">{project.project_name}</h4>
         <p>{project.description}</p>
 
-        <a href={project.link || "#"} target="_blank" rel="noopener noreferrer" >
+        <a href={project.project_url || "#"} target="_blank" rel="noopener noreferrer" >
           MAIS DETALHES
         </a>
         <hr />
