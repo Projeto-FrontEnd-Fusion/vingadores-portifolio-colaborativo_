@@ -3,12 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import ProjectCard from "../ProjectCard/ProjectCard";
 import CarouselNavigation from "../CarouselNavigation/CarouselNavigation";
 import "swiper/swiper-bundle.css";
+import clsx from "clsx";
 
 const MemberProjects = () => {
   const selectedMember = useMemberStore((state) => state.selectedMember);
+  const projectsExist = selectedMember !== null && selectedMember.projects.length > 0
 
   return (
-    <section className="mt-20">
+    <section className={clsx('mt-20 transition-all duration-500', { "max-h-0 opacity-0": !projectsExist, "max-h-96 opacity-1": projectsExist })}>
       <h3 className="text-white font-normal text-4xl text-center">Meus Projetos</h3>
       <div className="mt-16 font-fusion">
 

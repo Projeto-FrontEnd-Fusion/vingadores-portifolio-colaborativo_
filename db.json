@@ -461,32 +461,7 @@
         "trello",
         "slack"
       ],
-      "projects": [
-        {
-          "id": "52e1004c-12f9-429e-8fa6-59b56ddc64c6",
-          "project_cover": "https://woovina.com/images/2023/11/14/bugmart-cover.png",
-          "project_name": "Bugmart",
-          "description": "Bugmart is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. With beautiful design, fast loading, SEO friendly, and easy to customize, it's a good template for bookstore, and bookshop.",
-          "technologies": [
-            "Java",
-            "JavaScript",
-            "Python"
-          ],
-          "project_url": "https://example.com"
-        },
-        {
-          "id": "990c581f-06ce-4bf9-a6f5-3dee5a3972ca",
-          "project_cover": "https://woovina.com/images/2022/05/02/digita-cover.png",
-          "project_name": "Digita",
-          "description": "Digita is a complete eCommerce website template built with WordPress, WooCommerce, Elementor, and WooVina theme. This template will be a perfect choice for online eCommerce stores like electronic stores, computer stores, mobile stores, watch stores, digital stores, and multipurpose online stores.",
-          "technologies": [
-            "Java",
-            "JavaScript",
-            "Python"
-          ],
-          "project_url": "https://example.com"
-        }
-      ],
+      "projects": [],
       "soft_skills": [
         "Communication",
         "Teamwork"
