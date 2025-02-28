@@ -10,7 +10,10 @@ const MemberProjects = () => {
   const projectsExist = selectedMember !== null && selectedMember.projects.length > 0
 
   return (
-    <section className={clsx('mt-20 transition-all duration-500', { "max-h-0 opacity-0": !projectsExist, "max-h-[1000px] opacity-1": projectsExist })}>
+    <section
+      className={clsx('mt-20 transition-all duration-500', { "max-h-0 opacity-0": !projectsExist, "max-h-[1000px] opacity-1": projectsExist })}
+      aria-hidden={!projectsExist}
+    >
       <h3 className="text-white font-normal text-4xl text-center">Meus Projetos</h3>
       <div className="mt-16 font-fusion">
 
