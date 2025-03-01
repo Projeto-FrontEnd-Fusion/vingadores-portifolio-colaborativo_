@@ -6,6 +6,7 @@ import MembersDescription from "./components/MembersDescription/MembersDescripti
 import Navbar from "./components/Navbar/Navbar";
 import SectionPresentation from "./components/SectionPresentation/SectionPresentation";
 import MemberCarousel from './components/MemberCarousel/MemberCarousel';
+import MemberProjects from './components/MemberProjects/MemberProjects';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <section id="Equipes" className="pb-16">
             <MembersDescription />
             <MemberCarousel />
+            <MemberProjects />
           </section>
 
           <section className="w-full flex flex-col justify-center items-center gap-8 lg:flex-row lg:items-start">

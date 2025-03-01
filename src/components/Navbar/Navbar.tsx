@@ -22,7 +22,7 @@ function Navbar(): JSX.Element {
         </div>
 
         <button
-          className="z-[50] mobile-nav:z-[-1] mobile-nav:absolute mobile-nav:hidden"
+          className="z-[50] hb:z-[-1] hb:absolute hb:hidden"
           aria-expanded={isOpen}
           aria-label="menu"
           tabIndex={1}

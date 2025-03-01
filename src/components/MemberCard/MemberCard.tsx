@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { useSwiper } from "swiper/react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { IGetMemberResponse } from "../../types/membersApi";
+import CarouselNavigation from "../CarouselNavigation/CarouselNavigation";
 
 interface MemberCardProps {
   member: IGetMemberResponse;
@@ -60,22 +61,7 @@ const MemberCard = ({ member, isActive }: MemberCardProps) => {
             })}
           </div>
 
-          <div className="flex gap-4 text-white text-xl">
-            <button
-              className="hover:scale-125"
-              aria-label="membro anterior"
-              onClick={() => swiper.slidePrev()}
-            >
-              <IoIosArrowBack />
-            </button>
-            <button
-              className="hover:scale-125"
-              aria-label="próximo membro"
-              onClick={() => swiper.slideNext()}
-            >
-              <IoIosArrowForward />
-            </button>
-          </div>
+          <CarouselNavigation label="membro" />
         </div>
       )}
     </div>

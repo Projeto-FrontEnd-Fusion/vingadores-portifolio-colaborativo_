@@ -4,6 +4,6 @@
 
 @layer components {
   .register-button {
-    @apply w-fit h-fit py-3 px-4 bg-transparent text-[#26EEEF] font-bold text-lg text-center transition-colors hover:text-[#1CC4D4] active:text-[#1A9B9D] ease-in-out rounded-[2.125rem] mobile-nav:text-sm mobile-nav:bg-[#26EEEF] mobile-nav:text-fusion-d-blue mobile-nav:font-normal hover:mobile-nav:bg-[#1CC4D4] active:mobile-nav:bg-[#1A9998] active:mobile-nav:text-fusion-d-blue hover:mobile-nav:text-fusion-d-blue
+    @apply w-fit h-fit py-3 px-4 bg-transparent text-[#26EEEF] font-bold text-lg text-center transition-colors hover:text-[#1CC4D4] active:text-[#1A9B9D] ease-in-out rounded-[2.125rem] hb:text-sm hb:bg-[#26EEEF] hb:text-fusion-d-blue hb:font-normal hover:hb:bg-[#1CC4D4] active:hb:bg-[#1A9998] active:hb:text-fusion-d-blue hover:hb:text-fusion-d-blue
   }
 }
